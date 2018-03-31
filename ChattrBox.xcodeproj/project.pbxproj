@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9DC9613BB8BD2A1DBA8D1E /* Pods_ChattrBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E46B292FB1A02C1EC67E8C /* Pods_ChattrBox.framework */; };
+		194BAC575567391FF2070F02 /* Pods_ChattrBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3905756ACBE499932A2945 /* Pods_ChattrBoxTests.framework */; };
+		196CCAB65E2759A5987CD544 /* Pods_ChattrBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */; };
 		E05D7888206F45CF000EC831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7887206F45CF000EC831 /* AppDelegate.swift */; };
 		E05D788A206F45CF000EC831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7889206F45CF000EC831 /* ViewController.swift */; };
 		E05D788D206F45CF000EC831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05D788B206F45CF000EC831 /* Main.storyboard */; };
@@ -70,6 +73,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DF70566C34635785E84AC30 /* Pods-ChattrBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBox/Pods-ChattrBox.debug.xcconfig"; sourceTree = "<group>"; };
+		630E97F03FD58681ACD95AD8 /* Pods-ChattrBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxUITests/Pods-ChattrBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A3905756ACBE499932A2945 /* Pods_ChattrBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattrBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E46B292FB1A02C1EC67E8C /* Pods_ChattrBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattrBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A37414D14ED20ED562E9DD7 /* Pods-ChattrBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBox/Pods-ChattrBox.release.xcconfig"; sourceTree = "<group>"; };
+		7DC3A4CEC28947B950415C0C /* Pods-ChattrBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxTests/Pods-ChattrBoxTests.release.xcconfig"; sourceTree = "<group>"; };
+		87F3EDAFD2B90AAAB120E22C /* Pods-ChattrBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxTests/Pods-ChattrBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9404B046C0DDCEBBB0D31B88 /* Pods-ChattrBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxUITests/Pods-ChattrBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattrBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D7884206F45CF000EC831 /* ChattrBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattrBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D7887206F45CF000EC831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05D7889206F45CF000EC831 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9DC9613BB8BD2A1DBA8D1E /* Pods_ChattrBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194BAC575567391FF2070F02 /* Pods_ChattrBoxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,12 +130,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196CCAB65E2759A5987CD544 /* Pods_ChattrBoxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11B2CEDB9D35BF60A0A7DB2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DF70566C34635785E84AC30 /* Pods-ChattrBox.debug.xcconfig */,
+				7A37414D14ED20ED562E9DD7 /* Pods-ChattrBox.release.xcconfig */,
+				87F3EDAFD2B90AAAB120E22C /* Pods-ChattrBoxTests.debug.xcconfig */,
+				7DC3A4CEC28947B950415C0C /* Pods-ChattrBoxTests.release.xcconfig */,
+				9404B046C0DDCEBBB0D31B88 /* Pods-ChattrBoxUITests.debug.xcconfig */,
+				630E97F03FD58681ACD95AD8 /* Pods-ChattrBoxUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BEDC2BDDC8543798C78D430A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72E46B292FB1A02C1EC67E8C /* Pods_ChattrBox.framework */,
+				6A3905756ACBE499932A2945 /* Pods_ChattrBoxTests.framework */,
+				B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E05D787B206F45CF000EC831 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +167,8 @@
 				E05D789B206F45D0000EC831 /* ChattrBoxTests */,
 				E05D78A6206F45D0000EC831 /* ChattrBoxUITests */,
 				E05D7885206F45CF000EC831 /* Products */,
+				11B2CEDB9D35BF60A0A7DB2F /* Pods */,
+				BEDC2BDDC8543798C78D430A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E05D78AC206F45D0000EC831 /* Build configuration list for PBXNativeTarget "ChattrBox" */;
 			buildPhases = (
+				3145174E8899A8688C763FA3 /* [CP] Check Pods Manifest.lock */,
 				E05D7880206F45CF000EC831 /* Sources */,
 				E05D7881206F45CF000EC831 /* Frameworks */,
 				E05D7882206F45CF000EC831 /* Resources */,
+				6AA3E1276B3D4F4255584DE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E05D78AF206F45D0000EC831 /* Build configuration list for PBXNativeTarget "ChattrBoxTests" */;
 			buildPhases = (
+				C732BCA6B3B04FEB38F47FF8 /* [CP] Check Pods Manifest.lock */,
 				E05D7894206F45D0000EC831 /* Sources */,
 				E05D7895206F45D0000EC831 /* Frameworks */,
 				E05D7896206F45D0000EC831 /* Resources */,
+				38A6DC53F476E267D9890DB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,9 +319,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E05D78B2206F45D0000EC831 /* Build configuration list for PBXNativeTarget "ChattrBoxUITests" */;
 			buildPhases = (
+				D958C9CF327E87E4BEDDF2C0 /* [CP] Check Pods Manifest.lock */,
 				E05D789F206F45D0000EC831 /* Sources */,
 				E05D78A0206F45D0000EC831 /* Frameworks */,
 				E05D78A1206F45D0000EC831 /* Resources */,
+				A45EE34236917AB9DA78C9F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,6 +419,123 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3145174E8899A8688C763FA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChattrBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38A6DC53F476E267D9890DB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBoxTests/Pods-ChattrBoxTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBoxTests/Pods-ChattrBoxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA3E1276B3D4F4255584DE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBox/Pods-ChattrBox-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBox/Pods-ChattrBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A45EE34236917AB9DA78C9F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBoxUITests/Pods-ChattrBoxUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChattrBoxUITests/Pods-ChattrBoxUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C732BCA6B3B04FEB38F47FF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChattrBoxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D958C9CF327E87E4BEDDF2C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChattrBoxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E05D7880206F45CF000EC831 /* Sources */ = {
@@ -568,6 +731,7 @@
 		};
 		E05D78AD206F45D0000EC831 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DF70566C34635785E84AC30 /* Pods-ChattrBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -583,6 +747,7 @@
 		};
 		E05D78AE206F45D0000EC831 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A37414D14ED20ED562E9DD7 /* Pods-ChattrBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,6 +763,7 @@
 		};
 		E05D78B0206F45D0000EC831 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87F3EDAFD2B90AAAB120E22C /* Pods-ChattrBoxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -615,6 +781,7 @@
 		};
 		E05D78B1206F45D0000EC831 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DC3A4CEC28947B950415C0C /* Pods-ChattrBoxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -632,6 +799,7 @@
 		};
 		E05D78B3206F45D0000EC831 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9404B046C0DDCEBBB0D31B88 /* Pods-ChattrBoxUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -648,6 +816,7 @@
 		};
 		E05D78B4206F45D0000EC831 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 630E97F03FD58681ACD95AD8 /* Pods-ChattrBoxUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
