@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m1h-mt-Xgd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Places-->
+        <scene sceneID="GHR-Fu-7fB">
+            <objects>
+                <collectionViewController storyboardIdentifier="Places" title="Places" id="8NU-mm-Pk4" customClass="PlacesCollectionViewController" customModule="Let_s_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="B3C-fH-y75">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TTq-Kt-7q5">
+                            <size key="itemSize" width="90" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="placesCellId" id="8EW-0w-AaX" customClass="PlacesCollectionViewCell" customModule="Let_s_Chat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureThis" translatesAutoresizingMaskIntoConstraints="NO" id="flh-Zx-SgE">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="26"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="flh-Zx-SgE" firstAttribute="top" secondItem="8EW-0w-AaX" secondAttribute="top" id="2Cw-HQ-FEo"/>
+                                    <constraint firstItem="flh-Zx-SgE" firstAttribute="leading" secondItem="8EW-0w-AaX" secondAttribute="leading" id="F39-7o-T7c"/>
+                                    <constraint firstAttribute="bottom" secondItem="flh-Zx-SgE" secondAttribute="bottom" id="duZ-6a-4zJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="flh-Zx-SgE" secondAttribute="trailing" id="e38-aQ-MPV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="placesCellImageView" destination="flh-Zx-SgE" id="lix-Na-mFi"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="8NU-mm-Pk4" id="Ovi-vE-YSG"/>
+                            <outlet property="delegate" destination="8NU-mm-Pk4" id="APz-bN-z5S"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Places" id="uG1-Y2-Ix6">
+                        <barButtonItem key="rightBarButtonItem" title="Add Places" id="UgK-d1-s6u">
+                            <connections>
+                                <action selector="placesAddButton:" destination="8NU-mm-Pk4" id="Bnq-ke-jM3"/>
+                                <segue destination="3wN-Wo-yg9" kind="show" identifier="placesToAddItem" id="Wh2-ax-TMV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdt-sz-4O5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--AddItem-->
+        <scene sceneID="bbk-9C-8yZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddItem" id="3wN-Wo-yg9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhz-Ri-UzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="grG-yu-Rmv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m1h-mt-Xgd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wc2-Mh-ABG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8NU-mm-Pk4" kind="relationship" relationship="rootViewController" id="2O9-Rk-UUy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9HA-I1-Wnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pictureThis" width="225" height="225"/>
+    </resources>
+</document>
