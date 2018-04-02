@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lfo-8b-EC3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lfo-8b-EC3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,12 +13,12 @@
         <!--Add Item View Controller-->
         <scene sceneID="Ba7-lh-YyH">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="lfo-8b-EC3" customClass="AddItemViewController" customModule="Let_s_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="lfo-8b-EC3" customClass="AddItemViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed8-b6-vya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureThis" translatesAutoresizingMaskIntoConstraints="NO" id="tKV-JO-fMU">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="tKV-JO-fMU">
                                 <rect key="frame" x="87" y="32" width="201" height="245"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uId-Nh-qZ4">
@@ -37,10 +37,23 @@
                                 <rect key="frame" x="14" y="434" width="347" height="31"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-H1-ULW">
-                                <rect key="frame" x="16" y="483" width="343" height="30"/>
+                                <rect key="frame" x="16" y="483" width="164" height="30"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="soundRecordButton:" destination="lfo-8b-EC3" eventType="touchUpInside" id="v9m-N4-Cfg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permision Denied" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfD-0d-uV7">
+                                <rect key="frame" x="16" y="483" width="343" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qT-jy-eMZ">
+                                <rect key="frame" x="201" y="483" width="158" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="soundPlayer:" destination="lfo-8b-EC3" eventType="touchUpInside" id="IMs-uj-wsC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -51,18 +64,26 @@
                             <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="tKV-JO-fMU" secondAttribute="bottom" constant="390" id="Blx-6N-Cdh"/>
                             <constraint firstItem="FN5-H1-ULW" firstAttribute="top" secondItem="e2X-Ku-B5E" secondAttribute="bottom" constant="19" id="BpV-Og-g3u"/>
                             <constraint firstItem="tKV-JO-fMU" firstAttribute="leading" secondItem="mEa-if-xNh" secondAttribute="leading" constant="87" id="E2x-ir-uDE"/>
+                            <constraint firstItem="7qT-jy-eMZ" firstAttribute="top" secondItem="e2X-Ku-B5E" secondAttribute="bottom" constant="19" id="Fjq-Ow-SqZ"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="5Ak-OB-Gdh" secondAttribute="bottom" constant="319" id="If4-Vt-u1l"/>
                             <constraint firstItem="uId-Nh-qZ4" firstAttribute="top" secondItem="5Ak-OB-Gdh" secondAttribute="bottom" constant="25" id="JGW-Lv-LGx"/>
                             <constraint firstItem="e2X-Ku-B5E" firstAttribute="top" secondItem="uId-Nh-qZ4" secondAttribute="bottom" constant="40.5" id="LrJ-bn-Q1G"/>
+                            <constraint firstItem="DfD-0d-uV7" firstAttribute="top" secondItem="e2X-Ku-B5E" secondAttribute="bottom" constant="19" id="PCg-ub-4XU"/>
+                            <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="7qT-jy-eMZ" secondAttribute="bottom" constant="154" id="QPV-sl-bVl"/>
+                            <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="DfD-0d-uV7" secondAttribute="bottom" constant="101" id="RUf-JI-Vfo"/>
                             <constraint firstItem="tKV-JO-fMU" firstAttribute="top" secondItem="mEa-if-xNh" secondAttribute="top" constant="12" id="Rs2-eK-817"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="e2X-Ku-B5E" secondAttribute="bottom" constant="203" id="VYU-GY-rcM"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="FN5-H1-ULW" secondAttribute="bottom" constant="154" id="bWb-1p-zfJ"/>
+                            <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="7qT-jy-eMZ" secondAttribute="trailing" constant="16" id="bfW-Y0-RYl"/>
                             <constraint firstItem="FN5-H1-ULW" firstAttribute="leading" secondItem="mEa-if-xNh" secondAttribute="leading" constant="16" id="exH-az-pOl"/>
-                            <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="FN5-H1-ULW" secondAttribute="trailing" constant="16" id="hlC-vH-JMa"/>
+                            <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="FN5-H1-ULW" secondAttribute="trailing" constant="195" id="h6E-TU-tWj"/>
                             <constraint firstItem="uId-Nh-qZ4" firstAttribute="leading" secondItem="mEa-if-xNh" secondAttribute="leading" constant="16" id="igZ-38-sk2"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="tKV-JO-fMU" secondAttribute="trailing" constant="87" id="j5b-Kt-t8a"/>
+                            <constraint firstItem="DfD-0d-uV7" firstAttribute="leading" secondItem="mEa-if-xNh" secondAttribute="leading" constant="16" id="mgH-E2-LmY"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="uId-Nh-qZ4" secondAttribute="trailing" constant="16" id="ohn-dm-gpd"/>
                             <constraint firstItem="e2X-Ku-B5E" firstAttribute="leading" secondItem="mEa-if-xNh" secondAttribute="leading" constant="16" id="phU-li-NIh"/>
+                            <constraint firstItem="7qT-jy-eMZ" firstAttribute="leading" secondItem="FN5-H1-ULW" secondAttribute="trailing" constant="21" id="qKM-CC-Crm"/>
+                            <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="DfD-0d-uV7" secondAttribute="trailing" constant="16" id="qOG-xN-nuV"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="5Ak-OB-Gdh" secondAttribute="trailing" constant="16" id="sFq-W1-uby"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="bottom" secondItem="uId-Nh-qZ4" secondAttribute="bottom" constant="273.5" id="t8j-Fd-eXT"/>
                             <constraint firstItem="mEa-if-xNh" firstAttribute="trailing" secondItem="e2X-Ku-B5E" secondAttribute="trailing" constant="16" id="tKO-DD-gUt"/>
@@ -70,20 +91,31 @@
                         <viewLayoutGuide key="safeArea" id="mEa-if-xNh"/>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="newItemImageView" destination="tKV-JO-fMU" id="cnt-7C-dbb"/>
                         <outlet property="newItemNameTextField" destination="5Ak-OB-Gdh" id="i8h-vG-sSJ"/>
                         <outlet property="newItemTypeLabel" destination="uId-Nh-qZ4" id="4Wh-Tx-ryR"/>
+                        <outlet property="permissionDeniedLbl" destination="DfD-0d-uV7" id="YkN-ex-EGF"/>
+                        <outlet property="playButton" destination="7qT-jy-eMZ" id="aFO-Vn-bil"/>
+                        <outlet property="recordButton" destination="FN5-H1-ULW" id="ZJI-su-M3b"/>
                         <outlet property="soundSlider" destination="e2X-Ku-B5E" id="Z4R-BV-Yj2"/>
+                        <segue destination="gk3-BE-sZ2" kind="presentation" identifier="addItemToTabBarController" modalPresentationStyle="fullScreen" id="liT-6R-WXC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8T-ZJ-ays" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="330.39999999999998" y="181.25937031484258"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="Jmo-2p-TlX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="gk3-BE-sZ2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6d6-zd-deJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-11"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="pictureThis" width="225" height="225"/>
+        <image name="NoImage" width="876" height="758"/>
     </resources>
 </document>
