@@ -52,6 +52,37 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         self.view.endEditing(true)
     }
     
+    // MARK: Handle Slider
+    
+    var timer = Timer()
+    var counter: Float = 0
+    var isRunning: Bool = false
+    private func handleTimer() {
+        if !isRunning {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isRunning = true
+        }
+    }
+    
+    @objc func updateTimer() {
+        if counter < 3 {
+            counter += 1
+            soundSlider.value = counter
+            soundRecorder?.record()
+            recordButton.setTitle("Stop", for: .normal)
+            playButton.isEnabled = false
+            
+        } else {
+            timer.invalidate()
+            counter = 0
+            soundSlider.value = 0
+            isRunning = false
+            soundRecorder?.stop()
+            recordButton.setTitle("Record", for: .normal)
+            playButton.isEnabled = true
+        }
+    }
+    
     // Mark: Image Handler
     
     @objc func didTapImage() {
@@ -94,17 +125,20 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     var soundPlayer : AVAudioPlayer?
     var soundRecorder : AVAudioRecorder?
     var fileName = ""
-    
+ 
     @IBAction func soundRecordButton(_ sender: UIButton) {
-        if sender.titleLabel?.text == "Record" {
-            soundRecorder?.record()
-            sender.setTitle("Stop", for: .normal)
-            playButton.isEnabled = false
-        } else {
-            soundRecorder?.stop()
-            sender.setTitle("Record", for: .normal)
-            playButton.isEnabled = true
-        }
+        handleTimer()
+//        if sender.titleLabel?.text == "Record" {
+//            handleTimer()
+////            self.soundRecorder?.record()
+////            sender.setTitle("Stop", for: .normal)
+////            self.playButton.isEnabled = false
+//        } else {
+//            soundRecorder?.stop()
+//            sender.setTitle("Record", for: .normal)
+//            playButton.isEnabled = true
+//        }
+        
     }
     
     @IBAction func soundPlayer(_ sender: UIButton) {
@@ -196,13 +230,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @objc func saveItem() {
         savingImage()
         makePermanentCopy()
-        print("Items are being saved....")
         handleSegueToTabBar()
-//        self.navigationItem.backBarButtonItem?.action
-//        let tabBController = TabBarController()
-//        self.present(tabBController, animated: true) {
-//            self.tabBController?.selectedViewController?.title = self.newItemTypeLabel.text
-//        }
     }
     
     private func handleSegueToTabBar() {
