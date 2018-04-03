@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = "activitiesCellId"
 
 class ActivitiesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let realm = try! Realm()
+    var activities : Results<Items>?
+//    Results<Items>
+//    {
+//        get{
+//                return realm.objects(Items.self).filter("type == 'Activites'")
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .red
+        fetchAndFilter()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,14 +46,23 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if activities != nil {
+            return (activities?.count)!
+        } else {
+            return 0
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ActivitiesCollectionViewCell
-    
-        cell.activitiesCellImageView.image = #imageLiteral(resourceName: "pictureThis").withRenderingMode(.alwaysOriginal)
-    
+        let sortedActivities = activities?.sorted(byKeyPath: "name")
+        let activity = sortedActivities![indexPath.item]
+        print(activities?.count ?? "")
+        if let imageUrl = activity.imageUrl {
+            cell.activitiesCellImageView.loadEventImageUsingCacheWithUrlString(urlString: imageUrl)
+        } else {
+            cell.activitiesCellImageView.image = #imageLiteral(resourceName: "pictureThis")
+        }
         return cell
     }
     
@@ -50,7 +70,16 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
         return CGSize(width: 100.0, height: 100.0)
     }
     
+    private func fetchAndFilter() {
+        let items = realm.objects(Items.self)
+        let filteredItems = items.filter("type = 'Activities'")
+        let sortedItems = filteredItems.sorted(byKeyPath: "name")
+        activities = sortedItems
+    }
+    
     @IBAction func activitiesAddButton(_ sender: Any) {
     }
+    
+    
     
 }

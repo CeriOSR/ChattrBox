@@ -13,6 +13,7 @@ import RealmSwift
 
 class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate, UITextFieldDelegate {
     
+    let realm = try! Realm()
     var fromId : String?
     var saved: Bool = false
     
@@ -85,6 +86,8 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     
     // Mark: Image Handler
     
+    var imageUrl = String()
+    
     @objc func didTapImage() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -113,6 +116,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             fileName = NSUUID().uuidString + "-image.jpg"
         }
         let fileUrl = documentDirectory?.appendingPathComponent(fileName)
+        imageUrl = String(describing: fileUrl)
         let imageData = UIImageJPEGRepresentation(image, 0.3)
         do {
             try imageData?.write(to: fileUrl!)
@@ -121,24 +125,15 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         }
     }
     
-    //    // Mark: Sound Handler
+    // Mark: Sound Handler
+    
     var soundPlayer : AVAudioPlayer?
     var soundRecorder : AVAudioRecorder?
     var fileName = ""
- 
+    var audioUrl = String()
+    
     @IBAction func soundRecordButton(_ sender: UIButton) {
         handleTimer()
-//        if sender.titleLabel?.text == "Record" {
-//            handleTimer()
-////            self.soundRecorder?.record()
-////            sender.setTitle("Stop", for: .normal)
-////            self.playButton.isEnabled = false
-//        } else {
-//            soundRecorder?.stop()
-//            sender.setTitle("Record", for: .normal)
-//            playButton.isEnabled = true
-//        }
-        
     }
     
     @IBAction func soundPlayer(_ sender: UIButton) {
@@ -166,7 +161,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         recordButton.isEnabled = true
     }
     
-    func setupRecorder() {
+    private func setupRecorder() {
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -203,7 +198,8 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         } else {
             fileName = NSUUID().uuidString + ".m4a"
         }
-        let path = getCacheDirectory().stringByAppendingPathComponent(path: fileName)
+        let path  = getCacheDirectory().stringByAppendingPathComponent(path: fileName)
+        audioUrl = path
         let fileUrl = URL(fileURLWithPath: path)
         return fileUrl
     }
@@ -230,7 +226,23 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @objc func saveItem() {
         savingImage()
         makePermanentCopy()
+        guard let name = newItemNameTextField.text else {return}
+        guard let type = newItemTypeLabel.text else {return}
+        let item = Items()
+        item.name = name
+        item.type = type
+        item.audioUrl = audioUrl
+        item.imageUrl = imageUrl
+        writingToRealmDB(item)
+        print("Item has been saved to realm!")
         handleSegueToTabBar()
+        
+    }
+    
+    func writingToRealmDB(_ item: Items) {
+        try! realm.write {
+            realm.add(item, update: true)
+        }
     }
     
     private func handleSegueToTabBar() {

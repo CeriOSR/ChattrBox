@@ -56,6 +56,9 @@
 		E05D78F1207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
 		E05D78F2207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
 		E05D78F3207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
+		E0DA993220732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
+		E0DA993320732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
+		E0DA993420732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,7 @@
 		E05D78E4206F481B000EC831 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E05D78E5206F481B000EC831 /* PlacesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewController.swift; sourceTree = "<group>"; };
 		E05D78F0207126A8000EC831 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				E05D78F0207126A8000EC831 /* URL.swift */,
+				E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				E05D78CD206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78D2206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78E9206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
+				E0DA993220732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
 				E05D78F1207126A8000EC831 /* URL.swift in Sources */,
 				E05D78BE206F4703000EC831 /* ActivitiesCollectionViewCell.swift in Sources */,
 				E05D78D9206F480F000EC831 /* PeopleCollectionViewCell.swift in Sources */,
@@ -574,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05D78EA206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
+				E0DA993320732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
 				E05D78D3206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C2206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CE206F4743000EC831 /* AddItemViewController.swift in Sources */,
@@ -591,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05D78EB206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
+				E0DA993420732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
 				E05D78D4206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C3206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CF206F4743000EC831 /* AddItemViewController.swift in Sources */,
