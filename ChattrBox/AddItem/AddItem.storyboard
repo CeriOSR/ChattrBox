@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="330.39999999999998" y="181.25937031484258"/>
         </scene>
-        <!--Main-->
+        <!--TabBar-->
         <scene sceneID="Jmo-2p-TlX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="gk3-BE-sZ2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="TabBar" id="gk3-BE-sZ2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d6-zd-deJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939" y="-11"/>
