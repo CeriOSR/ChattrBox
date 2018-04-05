@@ -29,5 +29,13 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
         }
     }
     
+    func playTextToSpeed(_ text: String) {
+        let textString = text
+        let utterance = AVSpeechUtterance(string: textString)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        let synth = AVSpeechSynthesizer()
+        synth.speak(utterance)
+    }
+    
     
 }

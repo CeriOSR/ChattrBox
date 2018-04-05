@@ -47,10 +47,12 @@ extension ActivitiesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let sortedActivities = activities?.sorted(byKeyPath: "name") {
             let activity = sortedActivities[indexPath.item]
-            if let audioFileName = activity.audioFileName {
-                audioModels.setupPlayer(fileName: audioFileName)
-                audioModels.audioPlayer.play()
-            }
+            guard let name = activity.name else {return}
+                audioModels.playTextToSpeed(name)
+//            if let audioFileName = activity.audioFileName {
+//                audioModels.setupPlayer(fileName: audioFileName)
+//                audioModels.audioPlayer.play()
+//            }
         }
     }
     

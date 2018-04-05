@@ -11,7 +11,7 @@ import AVFoundation
 
 class AACEssentialsViewController: UIViewController {
     
-    
+    let audioModels = AudioModels()
     @IBOutlet weak var textToSpeechTxtFld: UITextField!
     @IBOutlet weak var readButtonItem: UIButton!
     
@@ -28,10 +28,11 @@ class AACEssentialsViewController: UIViewController {
     @IBAction func readButtonDidTap(_ sender: UIButton) {
         
         guard let textString = textToSpeechTxtFld.text else {return}
-        let utterance = AVSpeechUtterance(string: textString)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        let synth = AVSpeechSynthesizer()
-        synth.speak(utterance)
+        audioModels.playTextToSpeed(textString)
+//        let utterance = AVSpeechUtterance(string: textString)
+//        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+//        let synth = AVSpeechSynthesizer()
+//        synth.speak(utterance)
     }
 }
 

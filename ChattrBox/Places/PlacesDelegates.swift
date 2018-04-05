@@ -48,10 +48,12 @@ extension PlacesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let sortedPlaces = places?.sorted(byKeyPath: "name") {
             let place = sortedPlaces[indexPath.item]
-            if let audioFileName = place.audioFileName {
-                audioModels.setupPlayer(fileName: audioFileName)
-                audioModels.audioPlayer.play()
-            }
+            guard let name = place.name else {return}
+            audioModels.playTextToSpeed(name)
+//            if let audioFileName = place.audioFileName {
+//                audioModels.setupPlayer(fileName: audioFileName)
+//                audioModels.audioPlayer.play()
+//            }
         }
     }
     

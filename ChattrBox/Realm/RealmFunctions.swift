@@ -13,6 +13,12 @@ class ChattrRealm {
     let realm = try! Realm()
     var items : Results<Items>?
     
+    func writingToRealmDB(_ item: Items) {
+        try! realm.write {
+            realm.add(item)
+        }
+    }
+    
     func fetchAndFilter(_ type: String) -> Results<Items>{
         let items = realm.objects(Items.self)
         let filteredItems = items.filter("type = '\(type)'")
@@ -24,9 +30,7 @@ class ChattrRealm {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         }
         let imageFilePath = documentsUrl.appendingPathComponent(item.imageFileName!)
-        let audioFilePath = documentsUrl.appendingPathComponent(item.audioFileName!)
         do {
-            try FileManager.default.removeItem(at: audioFilePath)
             try FileManager.default.removeItem(at: imageFilePath)
             try self.realm.write {
                 realm.delete(item)

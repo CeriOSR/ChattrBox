@@ -47,11 +47,13 @@ extension PeopleCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
-            if let audioFileName = person.audioFileName {
-                audioModels.setupPlayer(fileName: audioFileName)
-                
-                audioModels.audioPlayer.play()
-            }
+            guard let name = person.name else {return}
+            audioModels.playTextToSpeed(name)
+//            if let audioFileName = person.audioFileName {
+//                audioModels.setupPlayer(fileName: audioFileName)
+//                
+//                audioModels.audioPlayer.play()
+//            }
         }
     }
     
