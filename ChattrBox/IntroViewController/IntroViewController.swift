@@ -16,11 +16,10 @@ class IntroViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
         if isRunning == false {
+            guard timer == nil else {return}
             timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(segueToTabBar), userInfo: nil, repeats: false)
             isRunning = true
         }
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
