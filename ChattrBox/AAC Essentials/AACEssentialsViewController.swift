@@ -46,10 +46,3 @@ extension AACEssentialsViewController: UITextFieldDelegate {
         return true
     }
 }
-
-//let utterance = AVSpeechUtterance(string: string)
-//utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-//
-//let synth = AVSpeechSynthesizer()
-//synth.speak(utterance)
-//Remember to import AVFoundation
