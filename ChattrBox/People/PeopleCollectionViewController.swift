@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-private let reuseIdentifier = "peopleCellId"
 
 class PeopleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let audioModels = AudioModels()
+    let reuseIdentifier = "peopleCellId"
+    let chattrRealm = ChattrRealm()
+    var people : Results<Items>?
+    let controllerId = "People"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
         collectionView?.backgroundColor = .green
-//        self.navigationItem.hidesBackButton = true
-
+        people = chattrRealm.fetchAndFilter(controllerId)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -27,31 +31,10 @@ class PeopleCollectionViewController: UICollectionViewController, UICollectionVi
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controllerId = "People"
         let destViewController: AddItemViewController = segue.destination as! AddItemViewController
         destViewController.fromId = controllerId
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PeopleCollectionViewCell
-    
-        cell.peopleCellImageView.image = #imageLiteral(resourceName: "pictureThis").withRenderingMode(.alwaysOriginal)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 100.0)
-    }
-
     @IBAction func peopleAddButton(_ sender: Any) {
     }
-    
 }

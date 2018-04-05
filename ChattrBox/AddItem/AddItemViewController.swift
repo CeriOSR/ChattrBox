@@ -17,7 +17,6 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     var fromId : String?
     var saved: Bool = false
     
-    
     @IBOutlet weak var newItemImageView: UIImageView!
     @IBOutlet weak var newItemTypeLabel: UILabel!
     @IBOutlet weak var newItemNameTextField: UITextField!
@@ -33,6 +32,9 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveItem))
         newItemImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapImage)))
         permissionDeniedLbl.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         setupRecorder()
     }
     
@@ -86,7 +88,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     
     // Mark: Image Handler
     
-    var imageUrl = String()
+    var imageFileName = String()
     
     @objc func didTapImage() {
         let imagePickerController = UIImagePickerController()
@@ -102,7 +104,6 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             newItemImageView.image = image
         }
         self.dismiss(animated: true) {
-            
         }
     }
     
@@ -112,11 +113,13 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         if let name = newItemNameTextField.text {
             fileName = NSUUID().uuidString + "-\(name)-image.jpg"
+            imageFileName = fileName
         } else {
             fileName = NSUUID().uuidString + "-image.jpg"
+            imageFileName = fileName
         }
         let fileUrl = documentDirectory?.appendingPathComponent(fileName)
-        imageUrl = String(describing: fileUrl)
+        
         let imageData = UIImageJPEGRepresentation(image, 0.3)
         do {
             try imageData?.write(to: fileUrl!)
@@ -130,7 +133,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     var soundPlayer : AVAudioPlayer?
     var soundRecorder : AVAudioRecorder?
     var fileName = ""
-    var audioUrl = String()
+    var audioFileName = String()
     
     @IBAction func soundRecordButton(_ sender: UIButton) {
         handleTimer()
@@ -195,11 +198,12 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     private func getPermanentFileUrl() -> URL {
         if let name = newItemNameTextField.text {
             fileName = NSUUID().uuidString + "-\(name)" + ".m4a"
+            audioFileName = fileName
         } else {
             fileName = NSUUID().uuidString + ".m4a"
+            audioFileName = fileName
         }
         let path  = getCacheDirectory().stringByAppendingPathComponent(path: fileName)
-        audioUrl = path
         let fileUrl = URL(fileURLWithPath: path)
         return fileUrl
     }
@@ -231,23 +235,21 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let item = Items()
         item.name = name
         item.type = type
-        item.audioUrl = audioUrl
-        item.imageUrl = imageUrl
+        item.audioFileName = audioFileName
+        item.imageFileName = imageFileName
         writingToRealmDB(item)
-        print("Item has been saved to realm!")
         handleSegueToTabBar()
         
     }
     
     func writingToRealmDB(_ item: Items) {
         try! realm.write {
-            realm.add(item, update: true)
+            realm.add(item)
         }
     }
     
     private func handleSegueToTabBar() {
         performSegue(withIdentifier: "addItemToTabBarController", sender: self)
-        //
     }
    
     /*

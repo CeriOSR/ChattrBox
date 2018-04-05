@@ -8,24 +8,20 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
-private let reuseIdentifier = "activitiesCellId"
-
-class ActivitiesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ActivitiesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, AVAudioPlayerDelegate {
     
-    let realm = try! Realm()
+    let audioModels = AudioModels()
+    let reuseIdentifier = "activitiesCellId"
+    let chattrRealm = ChattrRealm()
     var activities : Results<Items>?
-//    Results<Items>
-//    {
-//        get{
-//                return realm.objects(Items.self).filter("type == 'Activites'")
-//        }
-//    }
+    let controllerId = "Activities"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .red
-        fetchAndFilter()
+        activities = chattrRealm.fetchAndFilter(controllerId)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,51 +31,12 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controllerId = "Activities"
         let destViewController: AddItemViewController = segue.destination as! AddItemViewController
         destViewController.fromId = controllerId
-    }
-  
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if activities != nil {
-            return (activities?.count)!
-        } else {
-            return 0
-        }
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ActivitiesCollectionViewCell
-        let sortedActivities = activities?.sorted(byKeyPath: "name")
-        let activity = sortedActivities![indexPath.item]
-        print(activities?.count ?? "")
-        if let imageUrl = activity.imageUrl {
-            cell.activitiesCellImageView.loadEventImageUsingCacheWithUrlString(urlString: imageUrl)
-        } else {
-            cell.activitiesCellImageView.image = #imageLiteral(resourceName: "pictureThis")
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 100.0)
-    }
-    
-    private func fetchAndFilter() {
-        let items = realm.objects(Items.self)
-        let filteredItems = items.filter("type = 'Activities'")
-        let sortedItems = filteredItems.sorted(byKeyPath: "name")
-        activities = sortedItems
     }
     
     @IBAction func activitiesAddButton(_ sender: Any) {
     }
     
-    
-    
 }
+

@@ -12,6 +12,6 @@ import RealmSwift
 class Items: Object {
     @objc dynamic var name: String?
     @objc dynamic var type: String?
-    @objc dynamic var imageUrl: String?
-    @objc dynamic var audioUrl: String?
+    @objc dynamic var imageFileName: String?
+    @objc dynamic var audioFileName: String?
 }

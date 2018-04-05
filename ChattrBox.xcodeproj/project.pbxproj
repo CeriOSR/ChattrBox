@@ -56,9 +56,24 @@
 		E05D78F1207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
 		E05D78F2207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
 		E05D78F3207126A8000EC831 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D78F0207126A8000EC831 /* URL.swift */; };
-		E0DA993220732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
-		E0DA993320732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
-		E0DA993420732D72005A0AD8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */; };
+		E0DA993220732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */; };
+		E0DA993320732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */; };
+		E0DA993420732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */; };
+		E0DA993720747AD7005A0AD8 /* RealmFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */; };
+		E0DA993820747AD7005A0AD8 /* RealmFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */; };
+		E0DA993920747AD7005A0AD8 /* RealmFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */; };
+		E0DA993B207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993A207482C5005A0AD8 /* ActivitiesDelegates.swift */; };
+		E0DA993C207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993A207482C5005A0AD8 /* ActivitiesDelegates.swift */; };
+		E0DA993D207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993A207482C5005A0AD8 /* ActivitiesDelegates.swift */; };
+		E0DA993F2074831B005A0AD8 /* PeopleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */; };
+		E0DA99402074831B005A0AD8 /* PeopleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */; };
+		E0DA99412074831B005A0AD8 /* PeopleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */; };
+		E0DA9943207483AD005A0AD8 /* PlacesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */; };
+		E0DA9944207483AD005A0AD8 /* PlacesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */; };
+		E0DA9945207483AD005A0AD8 /* PlacesDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */; };
+		E0DA99472075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
+		E0DA99482075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
+		E0DA99492075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +129,12 @@
 		E05D78E4206F481B000EC831 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E05D78E5206F481B000EC831 /* PlacesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewController.swift; sourceTree = "<group>"; };
 		E05D78F0207126A8000EC831 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAndUIImageView.swift; sourceTree = "<group>"; };
+		E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFunctions.swift; sourceTree = "<group>"; };
+		E0DA993A207482C5005A0AD8 /* ActivitiesDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesDelegates.swift; sourceTree = "<group>"; };
+		E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDelegates.swift; sourceTree = "<group>"; };
+		E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDelegates.swift; sourceTree = "<group>"; };
+		E0DA99462075135D005A0AD8 /* AVAudioModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,10 +213,11 @@
 		E05D7886206F45CF000EC831 /* ChattrBox */ = {
 			isa = PBXGroup;
 			children = (
-				E05D78EF20712690000EC831 /* Extensions */,
+				E0DA993520747A92005A0AD8 /* Realm */,
+				E05D78EF20712690000EC831 /* Extensions and ClassModels */,
 				E05D78BA206F4703000EC831 /* Activities */,
 				E05D78C7206F4743000EC831 /* AddItem */,
-				E05D78D0206F47F8000EC831 /* Model */,
+				E05D78D0206F47F8000EC831 /* Object Model */,
 				E05D78D5206F480F000EC831 /* People */,
 				E05D78E2206F481B000EC831 /* Places */,
 				E05D78B5206F4619000EC831 /* TabBarController */,
@@ -241,6 +262,7 @@
 				E05D78BB206F4703000EC831 /* ActivitiesCollectionViewCell.swift */,
 				E05D78BC206F4703000EC831 /* ActivitiesCollectionViewController.swift */,
 				E05D78BD206F4703000EC831 /* Activities.storyboard */,
+				E0DA993A207482C5005A0AD8 /* ActivitiesDelegates.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -254,12 +276,12 @@
 			path = AddItem;
 			sourceTree = "<group>";
 		};
-		E05D78D0206F47F8000EC831 /* Model */ = {
+		E05D78D0206F47F8000EC831 /* Object Model */ = {
 			isa = PBXGroup;
 			children = (
 				E05D78D1206F47F8000EC831 /* Models.swift */,
 			);
-			path = Model;
+			path = "Object Model";
 			sourceTree = "<group>";
 		};
 		E05D78D5206F480F000EC831 /* People */ = {
@@ -268,6 +290,7 @@
 				E05D78D6206F480F000EC831 /* PeopleCollectionViewCell.swift */,
 				E05D78D7206F480F000EC831 /* People.storyboard */,
 				E05D78D8206F480F000EC831 /* PeopleCollectionViewController.swift */,
+				E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -278,17 +301,27 @@
 				E05D78E3206F481B000EC831 /* Places.storyboard */,
 				E05D78E4206F481B000EC831 /* PlacesCollectionViewCell.swift */,
 				E05D78E5206F481B000EC831 /* PlacesCollectionViewController.swift */,
+				E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
 		};
-		E05D78EF20712690000EC831 /* Extensions */ = {
+		E05D78EF20712690000EC831 /* Extensions and ClassModels */ = {
 			isa = PBXGroup;
 			children = (
 				E05D78F0207126A8000EC831 /* URL.swift */,
-				E0DA993120732D72005A0AD8 /* UIImageExtensions.swift */,
+				E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */,
+				E0DA99462075135D005A0AD8 /* AVAudioModels.swift */,
 			);
-			path = Extensions;
+			path = "Extensions and ClassModels";
+			sourceTree = "<group>";
+		};
+		E0DA993520747A92005A0AD8 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +393,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Rey Cerio";
 				TargetAttributes = {
 					E05D7883206F45CF000EC831 = {
@@ -560,10 +593,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DA993F2074831B005A0AD8 /* PeopleDelegates.swift in Sources */,
 				E05D78CD206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78D2206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78E9206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
-				E0DA993220732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
+				E0DA993B207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */,
+				E0DA993220732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
+				E0DA99472075135D005A0AD8 /* AVAudioModels.swift in Sources */,
+				E0DA9943207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
 				E05D78F1207126A8000EC831 /* URL.swift in Sources */,
 				E05D78BE206F4703000EC831 /* ActivitiesCollectionViewCell.swift in Sources */,
 				E05D78D9206F480F000EC831 /* PeopleCollectionViewCell.swift in Sources */,
@@ -572,6 +609,7 @@
 				E05D7888206F45CF000EC831 /* AppDelegate.swift in Sources */,
 				E05D78C1206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78DF206F480F000EC831 /* PeopleCollectionViewController.swift in Sources */,
+				E0DA993720747AD7005A0AD8 /* RealmFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,15 +618,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05D78EA206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
-				E0DA993320732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
+				E0DA9944207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
+				E0DA993320732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
 				E05D78D3206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C2206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CE206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78E0206F480F000EC831 /* PeopleCollectionViewController.swift in Sources */,
 				E05D78F2207126A8000EC831 /* URL.swift in Sources */,
+				E0DA99402074831B005A0AD8 /* PeopleDelegates.swift in Sources */,
 				E05D789D206F45D0000EC831 /* ChattrBoxTests.swift in Sources */,
+				E0DA99482075135D005A0AD8 /* AVAudioModels.swift in Sources */,
 				E05D78BF206F4703000EC831 /* ActivitiesCollectionViewCell.swift in Sources */,
+				E0DA993820747AD7005A0AD8 /* RealmFunctions.swift in Sources */,
 				E05D78ED206F481B000EC831 /* PlacesCollectionViewController.swift in Sources */,
+				E0DA993C207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */,
 				E05D78DA206F480F000EC831 /* PeopleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,15 +641,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05D78EB206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
-				E0DA993420732D72005A0AD8 /* UIImageExtensions.swift in Sources */,
+				E0DA9945207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
+				E0DA993420732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
 				E05D78D4206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C3206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CF206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78E1206F480F000EC831 /* PeopleCollectionViewController.swift in Sources */,
 				E05D78F3207126A8000EC831 /* URL.swift in Sources */,
+				E0DA99412074831B005A0AD8 /* PeopleDelegates.swift in Sources */,
 				E05D78A8206F45D0000EC831 /* ChattrBoxUITests.swift in Sources */,
+				E0DA99492075135D005A0AD8 /* AVAudioModels.swift in Sources */,
 				E05D78C0206F4703000EC831 /* ActivitiesCollectionViewCell.swift in Sources */,
+				E0DA993920747AD7005A0AD8 /* RealmFunctions.swift in Sources */,
 				E05D78EE206F481B000EC831 /* PlacesCollectionViewController.swift in Sources */,
+				E0DA993D207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */,
 				E05D78DB206F480F000EC831 /* PeopleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +708,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -667,6 +716,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -717,6 +767,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -724,6 +775,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

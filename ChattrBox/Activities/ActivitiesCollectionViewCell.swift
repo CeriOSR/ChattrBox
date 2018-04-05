@@ -10,6 +10,7 @@ import UIKit
 
 class ActivitiesCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var activitiesLbl: UILabel!
     @IBOutlet weak var activitiesCellImageView: UIImageView!
 
 }

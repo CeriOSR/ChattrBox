@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLJ-np-TJa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RLJ-np-TJa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Activities-->
         <scene sceneID="Zjh-Tl-Aoq">
             <objects>
-                <collectionViewController storyboardIdentifier="Activities" title="Activities" id="zod-1B-f1H" customClass="ActivitiesCollectionViewController" customModule="Let_s_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Activities" title="Activities" id="zod-1B-f1H" customClass="ActivitiesCollectionViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qig-Nw-IxD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activitiesCellId" id="ep5-XW-Mdn" customClass="ActivitiesCollectionViewCell" customModule="Let_s_Chat" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activitiesCellId" id="ep5-XW-Mdn" customClass="ActivitiesCollectionViewCell" customModule="ChattrBox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -34,16 +34,27 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-Zr-e72">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdJ-tk-HSn">
+                                            <rect key="frame" x="0.0" y="39" width="50" height="11"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fdJ-tk-HSn" secondAttribute="bottom" id="708-hY-KGP"/>
+                                    <constraint firstAttribute="trailing" secondItem="fdJ-tk-HSn" secondAttribute="trailing" id="Jkj-bl-o0x"/>
+                                    <constraint firstItem="fdJ-tk-HSn" firstAttribute="leading" secondItem="ep5-XW-Mdn" secondAttribute="leading" id="TMg-z9-66k"/>
                                     <constraint firstAttribute="bottom" secondItem="UKQ-Zr-e72" secondAttribute="bottom" id="WdC-0B-OLD"/>
                                     <constraint firstItem="UKQ-Zr-e72" firstAttribute="leading" secondItem="ep5-XW-Mdn" secondAttribute="leading" id="gO3-6M-6LA"/>
+                                    <constraint firstItem="fdJ-tk-HSn" firstAttribute="top" secondItem="ep5-XW-Mdn" secondAttribute="top" constant="39" id="i9a-ar-ub4"/>
                                     <constraint firstItem="UKQ-Zr-e72" firstAttribute="top" secondItem="ep5-XW-Mdn" secondAttribute="top" id="rZk-n0-lgB"/>
                                     <constraint firstAttribute="trailing" secondItem="UKQ-Zr-e72" secondAttribute="trailing" id="toX-yT-xvd"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="activitiesCellImageView" destination="UKQ-Zr-e72" id="h6x-Y7-2IX"/>
+                                    <outlet property="activitiesLbl" destination="fdJ-tk-HSn" id="sQc-eK-Rdv"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
