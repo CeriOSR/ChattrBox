@@ -74,6 +74,9 @@
 		E0DA99472075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
 		E0DA99482075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
 		E0DA99492075135D005A0AD8 /* AVAudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA99462075135D005A0AD8 /* AVAudioModels.swift */; };
+		E0DA99502076A50B005A0AD8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA994F2076A50B005A0AD8 /* IntroViewController.swift */; };
+		E0DA99512076A50B005A0AD8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA994F2076A50B005A0AD8 /* IntroViewController.swift */; };
+		E0DA99522076A50B005A0AD8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA994F2076A50B005A0AD8 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,7 @@
 		E0DA993E2074831B005A0AD8 /* PeopleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDelegates.swift; sourceTree = "<group>"; };
 		E0DA9942207483AD005A0AD8 /* PlacesDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDelegates.swift; sourceTree = "<group>"; };
 		E0DA99462075135D005A0AD8 /* AVAudioModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioModels.swift; sourceTree = "<group>"; };
+		E0DA994F2076A50B005A0AD8 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 		E05D7886206F45CF000EC831 /* ChattrBox */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA994A2076A38D005A0AD8 /* IntroViewController */,
 				E0DA993520747A92005A0AD8 /* Realm */,
 				E05D78EF20712690000EC831 /* Extensions and ClassModels */,
 				E05D78BA206F4703000EC831 /* Activities */,
@@ -322,6 +327,14 @@
 				E0DA993620747AD7005A0AD8 /* RealmFunctions.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		E0DA994A2076A38D005A0AD8 /* IntroViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA994F2076A50B005A0AD8 /* IntroViewController.swift */,
+			);
+			path = IntroViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +615,7 @@
 				E0DA99472075135D005A0AD8 /* AVAudioModels.swift in Sources */,
 				E0DA9943207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
 				E05D78F1207126A8000EC831 /* URL.swift in Sources */,
+				E0DA99502076A50B005A0AD8 /* IntroViewController.swift in Sources */,
 				E05D78BE206F4703000EC831 /* ActivitiesCollectionViewCell.swift in Sources */,
 				E05D78D9206F480F000EC831 /* PeopleCollectionViewCell.swift in Sources */,
 				E05D788A206F45CF000EC831 /* TabBarController.swift in Sources */,
@@ -624,6 +638,7 @@
 				E05D78C2206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CE206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78E0206F480F000EC831 /* PeopleCollectionViewController.swift in Sources */,
+				E0DA99512076A50B005A0AD8 /* IntroViewController.swift in Sources */,
 				E05D78F2207126A8000EC831 /* URL.swift in Sources */,
 				E0DA99402074831B005A0AD8 /* PeopleDelegates.swift in Sources */,
 				E05D789D206F45D0000EC831 /* ChattrBoxTests.swift in Sources */,
@@ -647,6 +662,7 @@
 				E05D78C3206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CF206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78E1206F480F000EC831 /* PeopleCollectionViewController.swift in Sources */,
+				E0DA99522076A50B005A0AD8 /* IntroViewController.swift in Sources */,
 				E05D78F3207126A8000EC831 /* URL.swift in Sources */,
 				E0DA99412074831B005A0AD8 /* PeopleDelegates.swift in Sources */,
 				E05D78A8206F45D0000EC831 /* ChattrBoxUITests.swift in Sources */,
