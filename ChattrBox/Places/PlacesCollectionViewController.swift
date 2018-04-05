@@ -21,7 +21,6 @@ class PlacesCollectionViewController: UICollectionViewController, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .blue
         navigationItem.leftBarButtonItem = editButtonItem
         places = chattrRealm.fetchAndFilter(controllerId)
     }

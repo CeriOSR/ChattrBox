@@ -11,6 +11,7 @@ import UIKit
 class PlacesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var placesCellImageView: UIImageView!
+    @IBOutlet weak var placesNameLbl: UILabel!
     @IBOutlet weak var deleteButtonBGView: UIVisualEffectView!
     weak var delegate : PlacesCellDelegate?
     var isEditing: Bool = false {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,37 +14,44 @@
         <scene sceneID="GHR-Fu-7fB">
             <objects>
                 <collectionViewController storyboardIdentifier="Places" title="Places" id="8NU-mm-Pk4" customClass="PlacesCollectionViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="B3C-fH-y75">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" id="B3C-fH-y75">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GUs-Vd-UFk"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TTq-Kt-7q5">
-                            <size key="itemSize" width="90" height="90"/>
+                            <size key="itemSize" width="100" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="placesCellId" id="8EW-0w-AaX" customClass="PlacesCollectionViewCell" customModule="ChattrBox" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="placesCellId" id="8EW-0w-AaX" customClass="PlacesCollectionViewCell" customModule="ChattrBox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureThis" translatesAutoresizingMaskIntoConstraints="NO" id="flh-Zx-SgE">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="26"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGb-ZI-9oj">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="nMe-b9-aW5"/>
+                                            </constraints>
+                                            <viewLayoutGuide key="safeArea" id="7os-6u-mJf"/>
                                         </imageView>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V32-iB-kRq">
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V32-iB-kRq">
                                             <rect key="frame" x="4" y="4" width="12" height="12"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="7br-pb-ga6">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7br-pb-ga6">
                                                 <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhr-bW-7QC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhr-bW-7QC">
                                                         <rect key="frame" x="1" y="1" width="10" height="10"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="Enr-z3-Kfd"/>
+                                                            <constraint firstAttribute="height" constant="10" id="Rnd-Ua-xjt"/>
+                                                        </constraints>
                                                         <state key="normal" title="X">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -52,20 +60,45 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="mhr-bW-7QC" secondAttribute="bottom" constant="1" id="IMI-Op-81f"/>
+                                                    <constraint firstItem="mhr-bW-7QC" firstAttribute="leading" secondItem="7br-pb-ga6" secondAttribute="leading" constant="1" id="P5L-02-OFs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mhr-bW-7QC" secondAttribute="trailing" constant="1" id="Vvy-zT-Rc1"/>
+                                                    <constraint firstItem="mhr-bW-7QC" firstAttribute="top" secondItem="7br-pb-ga6" secondAttribute="top" constant="1" id="jHP-H5-YPI"/>
+                                                </constraints>
                                             </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="12" id="P8X-oj-8yr"/>
+                                                <constraint firstAttribute="height" constant="12" id="Q8n-Ez-tW0"/>
+                                            </constraints>
                                             <blurEffect style="extraLight"/>
                                         </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="NBh-uF-uMZ">
+                                            <rect key="frame" x="0.0" y="100" width="100" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Cle-p7-vV5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="flh-Zx-SgE" firstAttribute="top" secondItem="8EW-0w-AaX" secondAttribute="top" id="2Cw-HQ-FEo"/>
-                                    <constraint firstItem="flh-Zx-SgE" firstAttribute="leading" secondItem="8EW-0w-AaX" secondAttribute="leading" id="F39-7o-T7c"/>
-                                    <constraint firstAttribute="bottom" secondItem="flh-Zx-SgE" secondAttribute="bottom" id="duZ-6a-4zJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="flh-Zx-SgE" secondAttribute="trailing" id="e38-aQ-MPV"/>
+                                    <constraint firstAttribute="bottom" secondItem="NBh-uF-uMZ" secondAttribute="bottom" id="3M7-KY-aT7"/>
+                                    <constraint firstItem="V32-iB-kRq" firstAttribute="leading" secondItem="8EW-0w-AaX" secondAttribute="leading" constant="4" id="C1r-m0-55a"/>
+                                    <constraint firstItem="oGb-ZI-9oj" firstAttribute="leading" secondItem="8EW-0w-AaX" secondAttribute="leading" id="DcA-0y-cFF"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBh-uF-uMZ" secondAttribute="trailing" id="G0Z-OD-zbb"/>
+                                    <constraint firstItem="V32-iB-kRq" firstAttribute="top" secondItem="8EW-0w-AaX" secondAttribute="top" constant="4" id="dhl-tz-Mig"/>
+                                    <constraint firstItem="oGb-ZI-9oj" firstAttribute="top" secondItem="8EW-0w-AaX" secondAttribute="top" id="pxn-TQ-wRS"/>
+                                    <constraint firstItem="NBh-uF-uMZ" firstAttribute="leading" secondItem="8EW-0w-AaX" secondAttribute="leading" id="vbe-sa-nh5"/>
+                                    <constraint firstAttribute="trailing" secondItem="oGb-ZI-9oj" secondAttribute="trailing" id="w6d-4z-eqH"/>
                                 </constraints>
+                                <size key="customSize" width="100" height="140"/>
                                 <connections>
                                     <outlet property="deleteButtonBGView" destination="V32-iB-kRq" id="LEd-2t-tld"/>
-                                    <outlet property="placesCellImageView" destination="flh-Zx-SgE" id="lix-Na-mFi"/>
+                                    <outlet property="placesCellImageView" destination="oGb-ZI-9oj" id="R6E-1J-htL"/>
+                                    <outlet property="placesNameLbl" destination="NBh-uF-uMZ" id="g2Z-Bi-2b4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -82,7 +115,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addButtonItem" destination="UgK-d1-s6u" id="Wem-nb-eAr"/>
                     </connections>
@@ -118,7 +151,4 @@
             <point key="canvasLocation" x="-217" y="137"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pictureThis" width="225" height="225"/>
-    </resources>
 </document>

@@ -21,7 +21,6 @@ class PeopleCollectionViewController: UICollectionViewController, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .green
         navigationItem.leftBarButtonItem = editButtonItem
         people = chattrRealm.fetchAndFilter(controllerId)
 

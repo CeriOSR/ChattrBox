@@ -18,21 +18,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jsj-A3-FhO">
-                            <size key="itemSize" width="100" height="101"/>
+                            <size key="itemSize" width="100" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="peopleCellId" id="yCR-cg-17I" customClass="PeopleCollectionViewCell" customModule="ChattrBox" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XTu-bd-6Po">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQv-A2-r0j">
                                             <rect key="frame" x="4" y="4" width="12" height="12"/>
@@ -55,17 +55,28 @@
                                             </view>
                                             <blurEffect style="extraLight"/>
                                         </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4p-pY-aix">
+                                            <rect key="frame" x="0.0" y="100" width="100" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="XTu-bd-6Po" secondAttribute="bottom" id="BLw-nv-EDC"/>
+                                    <constraint firstAttribute="bottom" secondItem="XTu-bd-6Po" secondAttribute="bottom" constant="40" id="BLw-nv-EDC"/>
+                                    <constraint firstAttribute="trailing" secondItem="G4p-pY-aix" secondAttribute="trailing" id="G6q-1v-dn9"/>
                                     <constraint firstItem="XTu-bd-6Po" firstAttribute="leading" secondItem="yCR-cg-17I" secondAttribute="leading" id="eSP-9t-fkH"/>
                                     <constraint firstAttribute="trailing" secondItem="XTu-bd-6Po" secondAttribute="trailing" id="fub-se-11d"/>
+                                    <constraint firstAttribute="bottom" secondItem="G4p-pY-aix" secondAttribute="bottom" id="ifs-iO-Dqj"/>
+                                    <constraint firstItem="G4p-pY-aix" firstAttribute="top" secondItem="XTu-bd-6Po" secondAttribute="bottom" id="jV9-QJ-jDr"/>
                                     <constraint firstItem="XTu-bd-6Po" firstAttribute="top" secondItem="yCR-cg-17I" secondAttribute="top" id="ncB-N5-Mb6"/>
+                                    <constraint firstItem="G4p-pY-aix" firstAttribute="leading" secondItem="yCR-cg-17I" secondAttribute="leading" id="sby-tm-XhY"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="deleteButtonBGView" destination="cQv-A2-r0j" id="IBK-d8-kpU"/>
                                     <outlet property="peopleCellImageView" destination="XTu-bd-6Po" id="1jV-J5-9BT"/>
+                                    <outlet property="peopleNameLbl" destination="G4p-pY-aix" id="sT0-qO-Hkl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

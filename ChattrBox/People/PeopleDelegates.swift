@@ -27,6 +27,7 @@ extension PeopleCollectionViewController {
         cell.delegate = self
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
+            cell.peopleNameLbl.text = person.name
             if let imageFileName = person.imageFileName {
                 cell.peopleCellImageView.loadImageFromFileNameString(fileName: imageFileName)
             } else {
@@ -40,7 +41,7 @@ extension PeopleCollectionViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 100.0)
+        return CGSize(width: 100.0, height: 140.0)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

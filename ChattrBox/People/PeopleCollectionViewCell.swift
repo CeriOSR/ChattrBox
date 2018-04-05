@@ -10,6 +10,8 @@ import UIKit
 
 class PeopleCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var peopleNameLbl: UILabel!
     @IBOutlet weak var peopleCellImageView: UIImageView!
     @IBOutlet weak var deleteButtonBGView: UIVisualEffectView!
     weak var delegate : PeopleCellDelegate?

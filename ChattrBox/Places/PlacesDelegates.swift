@@ -28,6 +28,7 @@ extension PlacesCollectionViewController {
         
         if let sortedPlaces = places?.sorted(byKeyPath: "name") {
             let place = sortedPlaces[indexPath.item]
+            cell.placesNameLbl.text = place.name
             if let imageFileName = place.imageFileName {
                 cell.placesCellImageView.loadImageFromFileNameString(fileName: imageFileName)
             } else {
@@ -41,7 +42,7 @@ extension PlacesCollectionViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100.0, height: 100.0)
+        return CGSize(width: 100.0, height: 140.0)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -21,7 +21,6 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .red
         activities = chattrRealm.fetchAndFilter(controllerId)
         navigationItem.leftBarButtonItem = editButtonItem
     }
