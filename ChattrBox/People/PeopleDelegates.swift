@@ -24,7 +24,7 @@ extension PeopleCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PeopleCollectionViewCell
-        
+        cell.delegate = self
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
             if let imageFileName = person.imageFileName {
@@ -33,6 +33,9 @@ extension PeopleCollectionViewController {
                 cell.peopleCellImageView.image = #imageLiteral(resourceName: "NoImage")
             }
         }
+        cell.deleteButtonBGView.layer.cornerRadius = cell.deleteButtonBGView.bounds.width / 2
+        cell.deleteButtonBGView.layer.masksToBounds = true
+        cell.deleteButtonBGView.isHidden = !cell.isEditing
         return cell
     }
     
@@ -47,6 +50,31 @@ extension PeopleCollectionViewController {
                 audioModels.setupPlayer(fileName: audioFileName)
                 
                 audioModels.audioPlayer.play()
+            }
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        addButtonItem.isEnabled = !editing
+        if let indexPaths = collectionView?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                let cell = collectionView?.cellForItem(at: indexPath) as! PeopleCollectionViewCell
+                cell.isEditing = editing
+            }
+        }
+    }
+}
+
+extension PeopleCollectionViewController: PeopleCellDelegate {
+    func deleteCell(_ cell: PeopleCollectionViewCell) {
+        if let indexPath = collectionView?.indexPath(for: cell) {
+            if let sortedPeople = people?.sorted(byKeyPath: "name") {
+                let item = sortedPeople[indexPath.item]
+                chattrRealm.deleteItems(item)
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
             }
         }
     }

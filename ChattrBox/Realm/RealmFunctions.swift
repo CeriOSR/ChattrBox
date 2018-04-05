@@ -18,4 +18,21 @@ class ChattrRealm {
         let filteredItems = items.filter("type = '\(type)'")
         return filteredItems
     }
+    
+    func deleteItems(_ item: Items) {
+        var documentsUrl: URL {
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        }
+        let imageFilePath = documentsUrl.appendingPathComponent(item.imageFileName!)
+        let audioFilePath = documentsUrl.appendingPathComponent(item.audioFileName!)
+        do {
+            try FileManager.default.removeItem(at: audioFilePath)
+            try FileManager.default.removeItem(at: imageFilePath)
+            try self.realm.write {
+                realm.delete(item)
+            }
+        } catch let err {
+            print("Please handle this error", err)
+        }
+    }
 }

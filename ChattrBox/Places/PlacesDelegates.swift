@@ -34,6 +34,9 @@ extension PlacesCollectionViewController {
                 cell.placesCellImageView.image = #imageLiteral(resourceName: "NoImage")
             }
         }
+        cell.deleteButtonBGView.layer.cornerRadius = cell.deleteButtonBGView.bounds.width / 2
+        cell.deleteButtonBGView.layer.masksToBounds = true
+        cell.deleteButtonBGView.isHidden = !cell.isEditing
         return cell
     }
     
@@ -47,6 +50,31 @@ extension PlacesCollectionViewController {
             if let audioFileName = place.audioFileName {
                 audioModels.setupPlayer(fileName: audioFileName)
                 audioModels.audioPlayer.play()
+            }
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        addButtonItem.isEnabled = !editing
+        if let indexPaths = collectionView?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                let cell = collectionView?.cellForItem(at: indexPath) as! PlacesCollectionViewCell
+                cell.isEditing = editing
+            }
+        }
+    }
+}
+
+extension PlacesCollectionViewController: PlacesCellDelegate {
+    func deleteCell(_ cell: PlacesCollectionViewCell) {
+        if let indexPath = collectionView?.indexPath(for: cell) {
+            if let sortedPlaces = places?.sorted(byKeyPath: "name") {
+                let item = sortedPlaces[indexPath.item]
+                chattrRealm.deleteItems(item)
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
             }
         }
     }

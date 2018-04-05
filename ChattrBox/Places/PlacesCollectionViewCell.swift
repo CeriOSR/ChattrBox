@@ -11,4 +11,19 @@ import UIKit
 class PlacesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var placesCellImageView: UIImageView!
+    @IBOutlet weak var deleteButtonBGView: UIVisualEffectView!
+    weak var delegate : PlacesCellDelegate?
+    var isEditing: Bool = false {
+        didSet{
+            deleteButtonBGView.isHidden = !isEditing
+        }
+    }
+    
+    @IBAction func deleteButtonDidTap(_ sender: Any) {
+        delegate?.deleteCell(self)
+    }
+}
+
+protocol PlacesCellDelegate: class {
+    func deleteCell(_ cell: PlacesCollectionViewCell)
 }

@@ -40,13 +40,48 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-5P-eX5">
+                                            <rect key="frame" x="4" y="4" width="12" height="12"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0x9-2O-2fI">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdW-CL-9n0">
+                                                        <rect key="frame" x="1" y="1" width="10" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="x3J-tc-9Nh"/>
+                                                            <constraint firstAttribute="width" constant="10" id="yqy-rH-xN4"/>
+                                                        </constraints>
+                                                        <state key="normal" title="X">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="deleteButtonDidTap:" destination="ep5-XW-Mdn" eventType="touchUpInside" id="GI8-HM-LTf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="IdW-CL-9n0" firstAttribute="top" secondItem="0x9-2O-2fI" secondAttribute="top" constant="1" id="OLf-gg-E5H"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IdW-CL-9n0" secondAttribute="trailing" constant="1" id="cFm-tM-eS7"/>
+                                                    <constraint firstItem="IdW-CL-9n0" firstAttribute="leading" secondItem="0x9-2O-2fI" secondAttribute="leading" constant="1" id="d9l-VE-uWU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IdW-CL-9n0" secondAttribute="bottom" constant="1" id="oZf-KI-mtg"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="12" id="Pcf-vJ-wTz"/>
+                                                <constraint firstAttribute="width" constant="12" id="dLE-Ej-fo9"/>
+                                            </constraints>
+                                            <blurEffect style="extraLight"/>
+                                        </visualEffectView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="fdJ-tk-HSn" secondAttribute="bottom" id="708-hY-KGP"/>
+                                    <constraint firstItem="hVr-5P-eX5" firstAttribute="leading" secondItem="ep5-XW-Mdn" secondAttribute="leading" constant="4" id="FCA-8F-5xf"/>
                                     <constraint firstAttribute="trailing" secondItem="fdJ-tk-HSn" secondAttribute="trailing" id="Jkj-bl-o0x"/>
                                     <constraint firstItem="fdJ-tk-HSn" firstAttribute="leading" secondItem="ep5-XW-Mdn" secondAttribute="leading" id="TMg-z9-66k"/>
                                     <constraint firstAttribute="bottom" secondItem="UKQ-Zr-e72" secondAttribute="bottom" id="WdC-0B-OLD"/>
+                                    <constraint firstItem="hVr-5P-eX5" firstAttribute="top" secondItem="ep5-XW-Mdn" secondAttribute="top" constant="4" id="ZuJ-Yx-QGe"/>
                                     <constraint firstItem="UKQ-Zr-e72" firstAttribute="leading" secondItem="ep5-XW-Mdn" secondAttribute="leading" id="gO3-6M-6LA"/>
                                     <constraint firstItem="fdJ-tk-HSn" firstAttribute="top" secondItem="ep5-XW-Mdn" secondAttribute="top" constant="39" id="i9a-ar-ub4"/>
                                     <constraint firstItem="UKQ-Zr-e72" firstAttribute="top" secondItem="ep5-XW-Mdn" secondAttribute="top" id="rZk-n0-lgB"/>
@@ -55,6 +90,7 @@
                                 <connections>
                                     <outlet property="activitiesCellImageView" destination="UKQ-Zr-e72" id="h6x-Y7-2IX"/>
                                     <outlet property="activitiesLbl" destination="fdJ-tk-HSn" id="sQc-eK-Rdv"/>
+                                    <outlet property="deleteButtonBGView" destination="hVr-5P-eX5" id="FyD-F8-gMk"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -64,13 +100,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Activities" id="fV8-ez-7Ur">
-                        <barButtonItem key="rightBarButtonItem" title="Add Activities" id="Vfu-Hh-0Fh">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Vfu-Hh-0Fh">
                             <connections>
                                 <action selector="activitiesAddButton:" destination="zod-1B-f1H" id="XsE-Sa-qKV"/>
                                 <segue destination="LwL-N4-W49" kind="show" identifier="activitiesToAddItem" id="aOs-79-2KE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButtonItem" destination="Vfu-Hh-0Fh" id="aLP-9f-0E1"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FI7-lr-x7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

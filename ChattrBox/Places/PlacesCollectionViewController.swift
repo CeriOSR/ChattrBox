@@ -17,10 +17,12 @@ class PlacesCollectionViewController: UICollectionViewController, UICollectionVi
     let chattrRealm = ChattrRealm()
     var places : Results<Items>?
     let controllerId = "Places"
+    @IBOutlet weak var addButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .blue
+        navigationItem.leftBarButtonItem = editButtonItem
         places = chattrRealm.fetchAndFilter(controllerId)
     }
     

@@ -17,11 +17,14 @@ class PeopleCollectionViewController: UICollectionViewController, UICollectionVi
     let chattrRealm = ChattrRealm()
     var people : Results<Items>?
     let controllerId = "People"
+    @IBOutlet weak var addButtonItem: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .green
+        navigationItem.leftBarButtonItem = editButtonItem
         people = chattrRealm.fetchAndFilter(controllerId)
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {

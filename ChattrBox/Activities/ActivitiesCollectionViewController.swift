@@ -17,11 +17,13 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
     let chattrRealm = ChattrRealm()
     var activities : Results<Items>?
     let controllerId = "Activities"
+    @IBOutlet weak var addButtonItem: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .red
         activities = chattrRealm.fetchAndFilter(controllerId)
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     override func viewWillDisappear(_ animated: Bool) {

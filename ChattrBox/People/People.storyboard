@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BHD-Ao-KWE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BHD-Ao-KWE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--People-->
         <scene sceneID="99F-7I-8Pf">
             <objects>
-                <collectionViewController storyboardIdentifier="People" title="People" id="1v1-wk-MbO" customClass="PeopleCollectionViewController" customModule="Let_s_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="People" title="People" id="1v1-wk-MbO" customClass="PeopleCollectionViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kls-vG-okS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="peopleCellId" id="yCR-cg-17I" customClass="PeopleCollectionViewCell" customModule="Let_s_Chat" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="peopleCellId" id="yCR-cg-17I" customClass="PeopleCollectionViewCell" customModule="ChattrBox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -34,6 +34,27 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XTu-bd-6Po">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
                                         </imageView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQv-A2-r0j">
+                                            <rect key="frame" x="4" y="4" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="BmU-r2-vwq">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-z6-eaD">
+                                                        <rect key="frame" x="1" y="1" width="10" height="10"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="X">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="deleteButtonDidTap:" destination="yCR-cg-17I" eventType="touchUpInside" id="iGU-y3-LEs"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                            <blurEffect style="extraLight"/>
+                                        </visualEffectView>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -43,6 +64,7 @@
                                     <constraint firstItem="XTu-bd-6Po" firstAttribute="top" secondItem="yCR-cg-17I" secondAttribute="top" id="ncB-N5-Mb6"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="deleteButtonBGView" destination="cQv-A2-r0j" id="IBK-d8-kpU"/>
                                     <outlet property="peopleCellImageView" destination="XTu-bd-6Po" id="1jV-J5-9BT"/>
                                 </connections>
                             </collectionViewCell>
@@ -53,13 +75,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="People" id="ocl-tA-VmD">
-                        <barButtonItem key="rightBarButtonItem" title="Add People" id="VQM-T0-VwM">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="VQM-T0-VwM">
                             <connections>
                                 <action selector="peopleAddButton:" destination="1v1-wk-MbO" id="1Am-Rr-kPm"/>
                                 <segue destination="bJq-E1-QWj" kind="show" identifier="peopleToAddItem" id="dfP-r0-anB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButtonItem" destination="VQM-T0-VwM" id="7p3-6c-BhW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDm-Cm-f98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
