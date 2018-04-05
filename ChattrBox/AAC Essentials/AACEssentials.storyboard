@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HJX-gW-DIk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Essentials View Controller-->
+        <scene sceneID="L12-dS-NBb">
+            <objects>
+                <viewController id="vY5-eY-bAC" customClass="AACEssentialsViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXh-Np-f71">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0F5-Mq-8W0">
+                                <rect key="frame" x="16" y="75" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Gt-wW-13a"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="7eU-cR-7cY"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-qC-rgy">
+                                <rect key="frame" x="149" y="129" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fs3-tc-uaA"/>
+                                </constraints>
+                                <state key="normal" title="Read Text"/>
+                                <connections>
+                                    <action selector="readButtonDidTap:" destination="vY5-eY-bAC" eventType="touchUpInside" id="aWu-4K-ULM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0F5-Mq-8W0" firstAttribute="leading" secondItem="FMB-k5-jlN" secondAttribute="leading" constant="16" id="0S4-ma-eqH"/>
+                            <constraint firstItem="FMB-k5-jlN" firstAttribute="trailing" secondItem="0F5-Mq-8W0" secondAttribute="trailing" constant="16" id="BY9-09-6QC"/>
+                            <constraint firstItem="0F5-Mq-8W0" firstAttribute="top" secondItem="FMB-k5-jlN" secondAttribute="top" constant="11" id="DIe-8S-KI3"/>
+                            <constraint firstItem="cm6-qC-rgy" firstAttribute="top" secondItem="0F5-Mq-8W0" secondAttribute="bottom" constant="24" id="LVn-1q-efv"/>
+                            <constraint firstItem="FMB-k5-jlN" firstAttribute="trailing" secondItem="cm6-qC-rgy" secondAttribute="trailing" constant="149" id="Mm8-oO-Mwc"/>
+                            <constraint firstItem="cm6-qC-rgy" firstAttribute="leading" secondItem="FMB-k5-jlN" secondAttribute="leading" constant="149" id="dtD-bz-MJa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FMB-k5-jlN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s2r-3d-yKG"/>
+                    <connections>
+                        <outlet property="readButtonItem" destination="cm6-qC-rgy" id="siM-1q-FkT"/>
+                        <outlet property="textToSpeechTxtFld" destination="0F5-Mq-8W0" id="D3k-aT-4rA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGh-4c-y6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007.2" y="193.85307346326837"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3uL-gF-oZ3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HJX-gW-DIk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3up-rm-tHO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vY5-eY-bAC" kind="relationship" relationship="rootViewController" id="lEe-qh-U1M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bg-tF-z4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="193.85307346326837"/>
+        </scene>
+    </scenes>
+</document>
