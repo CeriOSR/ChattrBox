@@ -24,6 +24,20 @@ extension PeopleCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PeopleCollectionViewCell
+//        cell.delegate = self
+//        if let sortedPeople = people?.sorted(byKeyPath: "name") {
+//            let person = sortedPeople[indexPath.item]
+//            cell.peopleNameLbl.text = person.name
+//            if let imageFileName = person.imageFileName {
+//                cell.peopleCellImageView.loadImageFromFileNameString(fileName: imageFileName)
+//            } else {
+//                cell.peopleCellImageView.image = #imageLiteral(resourceName: "NoImage")
+//            }
+//        }
+//        cell.deleteButtonBGView.layer.cornerRadius = cell.deleteButtonBGView.bounds.width / 2
+//        cell.deleteButtonBGView.layer.masksToBounds = true
+//        cell.deleteButtonBGView.isHidden = !cell.isEditing
+//        return cell
         cell.delegate = self
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
@@ -47,13 +61,12 @@ extension PeopleCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
-            guard let name = person.name else {return}
-            audioModels.playTextToSpeed(name)
-//            if let audioFileName = person.audioFileName {
-//                audioModels.setupPlayer(fileName: audioFileName)
-//                
-//                audioModels.audioPlayer.play()
-//            }
+//            guard let name = person.name else {return}
+//            audioModels.playTextToSpeed(name)
+            if let audioFileName = person.audioFileName {
+                audioModels.setupPlayer(fileName: audioFileName)
+                audioModels.audioPlayer.play()
+            }
         }
     }
     

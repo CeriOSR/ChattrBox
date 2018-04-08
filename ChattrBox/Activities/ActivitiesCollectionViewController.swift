@@ -34,6 +34,7 @@ class ActivitiesCollectionViewController: UICollectionViewController, UICollecti
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController: AddItemViewController = segue.destination as! AddItemViewController
         destViewController.fromId = controllerId
+        
     }
     
     @IBAction func activitiesAddButton(_ sender: Any) {

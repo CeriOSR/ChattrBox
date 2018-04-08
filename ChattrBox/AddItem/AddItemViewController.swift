@@ -5,21 +5,24 @@
 //  Created by Rey Cerio on 2018-03-30.
 //  Copyright © 2018 Rey Cerio. All rights reserved.
 //
-
 import Foundation
 import UIKit
+import AVFoundation
 import RealmSwift
 
-class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate, UITextFieldDelegate {
     
     let realm = try! Realm()
     var fromId : String?
     var saved: Bool = false
-    let chattrRealm = ChattrRealm()
     
     @IBOutlet weak var newItemImageView: UIImageView!
     @IBOutlet weak var newItemTypeLabel: UILabel!
     @IBOutlet weak var newItemNameTextField: UITextField!
+    @IBOutlet weak var soundSlider: UISlider!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var availabilityLblItem: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +33,23 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setupRecorder()
+        if fromId == "People" {
+            recordButton.isEnabled = true
+            playButton.isEnabled = true
+            soundSlider.isEnabled = true
+            availabilityLblItem.isHidden = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-
+        do {
+            try FileManager.default.removeItem(at: getFileUrl())
+        } catch {
+            return
+        }
     }
-
+    
     // MARK: Handle Interactive Keyboard
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -47,7 +61,36 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         self.view.endEditing(true)
     }
     
-
+    // MARK: Handle Slider
+    
+    var timer = Timer()
+    var counter: Float = 0
+    var isRunning: Bool = false
+    private func handleTimer() {
+        if !isRunning {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isRunning = true
+        }
+    }
+    
+    @objc func updateTimer() {
+        if counter < 5 {
+            counter += 1
+            soundSlider.value = counter
+            soundRecorder?.record()
+            recordButton.setTitle("Stop", for: .normal)
+            playButton.isEnabled = false
+            
+        } else {
+            timer.invalidate()
+            counter = 0
+            soundSlider.value = 0
+            isRunning = false
+            soundRecorder?.stop()
+            recordButton.setTitle("Record", for: .normal)
+            playButton.isEnabled = true
+        }
+    }
     
     // Mark: Image Handler
     
@@ -91,33 +134,136 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         }
     }
     
+    // Mark: Sound Handler
+    
+    var soundPlayer : AVAudioPlayer?
+    var soundRecorder : AVAudioRecorder?
+    var fileName = ""
+    var audioFileName = String()
+    
+    @IBAction func soundRecordButton(_ sender: UIButton) {
+        handleTimer()
+    }
+    
+    @IBAction func soundPlayer(_ sender: UIButton) {
+        setupPlayer()
+        if sender.titleLabel?.text == "Play" {
+            recordButton.isEnabled = false
+            sender.setTitle("Stop", for: .normal)
+            soundPlayer?.play()
+        } else {
+            recordButton.isEnabled = true
+            sender.setTitle("Play", for: .normal)
+            soundPlayer?.stop()
+        }
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        playButton.isEnabled = true
+        recordButton.isEnabled = true
+        recordButton.setTitle("Record", for: .normal)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playButton.isEnabled = true
+        playButton.setTitle("Play", for: .normal)
+        recordButton.isEnabled = true
+    }
+    
+    private func setupRecorder() {
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        do {
+            soundRecorder = try AVAudioRecorder(url: getFileUrl(), settings: settings)
+            soundRecorder?.delegate = self
+            soundRecorder?.prepareToRecord()
+        } catch let err {
+            print(err)
+        }
+        
+    }
+    
+    private func getCacheDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        guard let first = paths.first else {return "no path"}
+        return first
+    }
+    
+    private func makePermanentCopy() {
+        do {
+            try FileManager.default.copyItem(at: getFileUrl(), to: getPermanentFileUrl())
+        } catch let err {
+            print(err)
+        }
+    }
+    
+    private func getPermanentFileUrl() -> URL {
+        if let name = newItemNameTextField.text {
+            fileName = NSUUID().uuidString + "-\(name)" + ".m4a"
+            audioFileName = fileName
+        } else {
+            fileName = NSUUID().uuidString + ".m4a"
+            audioFileName = fileName
+        }
+        let path  = getCacheDirectory().stringByAppendingPathComponent(path: fileName)
+        let fileUrl = URL(fileURLWithPath: path)
+        return fileUrl
+    }
+    
+    private func getFileUrl() -> URL {
+        fileName = "soundBite.m4a"
+        let path = getCacheDirectory().stringByAppendingPathComponent(path: fileName)
+        let fileUrl = URL(fileURLWithPath: path)
+        return fileUrl
+    }
+    
+    private func setupPlayer() {
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: getFileUrl())
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
+        } catch let err {
+            print(err)
+        }
+    }
     
     // MARK: - Handle Saving to Files App and Realm
-    
     @objc func saveItem() {
         savingImage()
+        makePermanentCopy()
         guard let name = newItemNameTextField.text else {return}
         guard let type = newItemTypeLabel.text else {return}
         let item = Items()
         item.name = name
         item.type = type
+        item.audioFileName = audioFileName
         item.imageFileName = imageFileName
-        chattrRealm.writingToRealmDB(item)
+        writingToRealmDB(item)
         handleSegueToTabBar()
         
+    }
+    
+    func writingToRealmDB(_ item: Items) {
+        try! realm.write {
+            realm.add(item)
+        }
     }
     
     private func handleSegueToTabBar() {
         performSegue(withIdentifier: "addItemToTabBarController", sender: self)
     }
-   
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

@@ -10,6 +10,7 @@ import AVFoundation
 
 class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    let url = GetFileUrl()
     var audioPlayer = AVAudioPlayer()
     var audioRecorder = AVAudioRecorder()
     var documentsUrl: URL {
@@ -37,5 +38,19 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
         synth.speak(utterance)
     }
     
-    
+    func setupRecorder(_ url: URL) {
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        do {
+            audioRecorder = try AVAudioRecorder(url: url, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.prepareToRecord()
+        } catch let err {
+            print(err)
+        }
+    }
 }
