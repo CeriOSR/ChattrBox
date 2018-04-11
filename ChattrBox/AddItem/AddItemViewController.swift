@@ -248,9 +248,14 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
     }
     
+    let chattrRealm = ChattrRealm()
+    let alertsModels = AlertsModels()
     func writingToRealmDB(_ item: Items) {
-        try! realm.write {
-            realm.add(item)
+        let count = chattrRealm.fetchAndFilter(item.type!).count
+        if count >= 51 {
+            alertsModels.createAlertWithOneAction("51 Is Max", message: "There are too many items in this category. Please delete some before adding.")
+        } else {
+            chattrRealm.writingToRealmDB(item)
         }
     }
     

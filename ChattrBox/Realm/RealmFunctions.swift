@@ -37,7 +37,8 @@ class ChattrRealm {
                 realm.delete(item)
             }
         } catch let err {
-            print("Please handle this error", err)
+            print("Please handle this error", err) //create an alert controller here
+            return
         }
     }
 }

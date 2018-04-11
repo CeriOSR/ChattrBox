@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.66977007769999997" green="0.66977007769999997" blue="0.66977007769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="xeC-hj-MQD" kind="relationship" relationship="viewControllers" id="1p9-qE-DRZ"/>
@@ -33,7 +34,7 @@
         <scene sceneID="pps-sL-Tgy">
             <objects>
                 <viewControllerPlaceholder storyboardName="Activities" id="xeC-hj-MQD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="v1V-vG-w8h"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activities" landscapeImage="Activities" largeContentSizeImage="Activities" selectedImage="Activities" id="v1V-vG-w8h"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BR3-ao-rfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +44,7 @@
         <scene sceneID="lls-IO-MK0">
             <objects>
                 <viewControllerPlaceholder storyboardName="People" id="97e-fM-jTp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NoC-hP-4oh"/>
+                    <tabBarItem key="tabBarItem" title="People" image="People" landscapeImage="People" largeContentSizeImage="People" selectedImage="People" id="NoC-hP-4oh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5q-ym-Tr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +54,7 @@
         <scene sceneID="jeU-Tm-MdY">
             <objects>
                 <viewControllerPlaceholder storyboardName="Places" id="ywD-6M-DY7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="f8S-gV-avY"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="Places" landscapeImage="Places" largeContentSizeImage="Places" selectedImage="Places" id="f8S-gV-avY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmd-3a-m3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +64,7 @@
         <scene sceneID="xbJ-8Q-QNe">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="ACCEssentials" storyboardName="AACEssentials" id="38p-dF-F1f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bIf-PA-omo"/>
+                    <tabBarItem key="tabBarItem" title="Essentials" image="Essentials" landscapeImage="Essentials" largeContentSizeImage="Essentials" selectedImage="Essentials" id="bIf-PA-omo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afH-AZ-qmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,4 +79,10 @@
             <point key="canvasLocation" x="-1430" y="-110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activities" width="30" height="30"/>
+        <image name="Essentials" width="30" height="30"/>
+        <image name="People" width="30" height="30"/>
+        <image name="Places" width="30" height="30"/>
+    </resources>
 </document>

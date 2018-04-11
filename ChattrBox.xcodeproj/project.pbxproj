@@ -10,6 +10,9 @@
 		0F9DC9613BB8BD2A1DBA8D1E /* Pods_ChattrBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E46B292FB1A02C1EC67E8C /* Pods_ChattrBox.framework */; };
 		194BAC575567391FF2070F02 /* Pods_ChattrBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3905756ACBE499932A2945 /* Pods_ChattrBoxTests.framework */; };
 		196CCAB65E2759A5987CD544 /* Pods_ChattrBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */; };
+		E019E849207BAE8D006EFB7D /* AlertsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019E848207BAE8C006EFB7D /* AlertsModels.swift */; };
+		E019E84A207BAE8D006EFB7D /* AlertsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019E848207BAE8C006EFB7D /* AlertsModels.swift */; };
+		E019E84B207BAE8D006EFB7D /* AlertsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019E848207BAE8C006EFB7D /* AlertsModels.swift */; };
 		E05D7888206F45CF000EC831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7887206F45CF000EC831 /* AppDelegate.swift */; };
 		E05D788A206F45CF000EC831 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7889206F45CF000EC831 /* TabBarController.swift */; };
 		E05D788D206F45CF000EC831 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05D788B206F45CF000EC831 /* TabBar.storyboard */; };
@@ -115,6 +118,7 @@
 		87F3EDAFD2B90AAAB120E22C /* Pods-ChattrBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxTests/Pods-ChattrBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9404B046C0DDCEBBB0D31B88 /* Pods-ChattrBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattrBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChattrBoxUITests/Pods-ChattrBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattrBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E019E848207BAE8C006EFB7D /* AlertsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsModels.swift; sourceTree = "<group>"; };
 		E05D7884206F45CF000EC831 /* ChattrBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattrBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D7887206F45CF000EC831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05D7889206F45CF000EC831 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -230,15 +234,15 @@
 			isa = PBXGroup;
 			children = (
 				E0DA995B2076DEA6005A0AD8 /* Intro */,
+				E05D78B5206F4619000EC831 /* TabBarController */,
 				E0DA994A2076A38D005A0AD8 /* AAC Essentials */,
-				E0DA993520747A92005A0AD8 /* Realm */,
-				E05D78EF20712690000EC831 /* Extensions and ClassModels */,
 				E05D78BA206F4703000EC831 /* Activities */,
-				E05D78C7206F4743000EC831 /* AddItem */,
-				E05D78D0206F47F8000EC831 /* Object Model */,
 				E05D78D5206F480F000EC831 /* People */,
 				E05D78E2206F481B000EC831 /* Places */,
-				E05D78B5206F4619000EC831 /* TabBarController */,
+				E0DA993520747A92005A0AD8 /* Realm */,
+				E05D78EF20712690000EC831 /* Extensions and ClassModels */,
+				E05D78C7206F4743000EC831 /* AddItem */,
+				E05D78D0206F47F8000EC831 /* Object Model */,
 				E05D7887206F45CF000EC831 /* AppDelegate.swift */,
 				E05D788E206F45CF000EC831 /* Assets.xcassets */,
 				E05D7890206F45CF000EC831 /* LaunchScreen.storyboard */,
@@ -330,6 +334,7 @@
 				E05D78F0207126A8000EC831 /* URL.swift */,
 				E0DA993120732D72005A0AD8 /* UIImageAndUIImageView.swift */,
 				E0DA99462075135D005A0AD8 /* AVAudioModels.swift */,
+				E019E848207BAE8C006EFB7D /* AlertsModels.swift */,
 			);
 			path = "Extensions and ClassModels";
 			sourceTree = "<group>";
@@ -639,6 +644,7 @@
 				E05D78CD206F4743000EC831 /* AddItemViewController.swift in Sources */,
 				E05D78D2206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78E9206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
+				E019E849207BAE8D006EFB7D /* AlertsModels.swift in Sources */,
 				E0DA993B207482C5005A0AD8 /* ActivitiesDelegates.swift in Sources */,
 				E0DA993220732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
 				E0DA99472075135D005A0AD8 /* AVAudioModels.swift in Sources */,
@@ -664,6 +670,7 @@
 				E05D78EA206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
 				E0DA9944207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
 				E0DA993320732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
+				E019E84A207BAE8D006EFB7D /* AlertsModels.swift in Sources */,
 				E05D78D3206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C2206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CE206F4743000EC831 /* AddItemViewController.swift in Sources */,
@@ -689,6 +696,7 @@
 				E05D78EB206F481B000EC831 /* PlacesCollectionViewCell.swift in Sources */,
 				E0DA9945207483AD005A0AD8 /* PlacesDelegates.swift in Sources */,
 				E0DA993420732D72005A0AD8 /* UIImageAndUIImageView.swift in Sources */,
+				E019E84B207BAE8D006EFB7D /* AlertsModels.swift in Sources */,
 				E05D78D4206F47F8000EC831 /* Models.swift in Sources */,
 				E05D78C3206F4703000EC831 /* ActivitiesCollectionViewController.swift in Sources */,
 				E05D78CF206F4743000EC831 /* AddItemViewController.swift in Sources */,
