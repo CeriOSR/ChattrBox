@@ -107,6 +107,7 @@
                             <outlet property="delegate" destination="8NU-mm-Pk4" id="APz-bN-z5S"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="Places" image="Places" landscapeImage="Places" largeContentSizeImage="Places" id="Zaj-uA-Ptq"/>
                     <navigationItem key="navigationItem" title="Places" id="uG1-Y2-Ix6">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="UgK-d1-s6u">
                             <connections>
@@ -115,6 +116,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addButtonItem" destination="UgK-d1-s6u" id="Wem-nb-eAr"/>
@@ -151,4 +153,7 @@
             <point key="canvasLocation" x="-217" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Places" width="30" height="30"/>
+    </resources>
 </document>

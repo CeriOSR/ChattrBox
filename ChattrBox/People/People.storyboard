@@ -85,6 +85,7 @@
                             <outlet property="delegate" destination="1v1-wk-MbO" id="tgk-6w-gfI"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="People" image="People" landscapeImage="People" largeContentSizeImage="People" id="b6K-0c-GFw"/>
                     <navigationItem key="navigationItem" title="People" id="ocl-tA-VmD">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="VQM-T0-VwM">
                             <connections>
@@ -93,6 +94,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButtonItem" destination="VQM-T0-VwM" id="7p3-6c-BhW"/>
                     </connections>
@@ -128,4 +130,7 @@
             <point key="canvasLocation" x="-282" y="197"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="People" width="30" height="30"/>
+    </resources>
 </document>

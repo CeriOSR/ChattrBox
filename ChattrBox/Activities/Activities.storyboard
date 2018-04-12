@@ -100,6 +100,7 @@
                             <outlet property="delegate" destination="zod-1B-f1H" id="m5s-r7-q8k"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activities" landscapeImage="Activities" largeContentSizeImage="Activities" id="2pR-MC-Jxm"/>
                     <navigationItem key="navigationItem" title="Activities" id="fV8-ez-7Ur">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Vfu-Hh-0Fh">
                             <connections>
@@ -108,6 +109,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -145,4 +147,7 @@
             <point key="canvasLocation" x="-247" y="188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activities" width="30" height="30"/>
+    </resources>
 </document>
