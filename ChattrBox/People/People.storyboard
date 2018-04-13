@@ -85,7 +85,17 @@
                             <outlet property="delegate" destination="1v1-wk-MbO" id="tgk-6w-gfI"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="People" image="People" landscapeImage="People" largeContentSizeImage="People" id="b6K-0c-GFw"/>
+                    <tabBarItem key="tabBarItem" title="People" image="People" landscapeImage="People" largeContentSizeImage="People" selectedImage="People" id="b6K-0c-GFw">
+                        <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.090196078431372548" green="0.49803921568627452" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="People" id="ocl-tA-VmD">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="VQM-T0-VwM">
                             <connections>

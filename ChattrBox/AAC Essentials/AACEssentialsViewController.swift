@@ -17,11 +17,14 @@ class AACEssentialsViewController: UIViewController {
     let audioModels = AudioModels()
     var aCCEssentials : Results<Items>?
     let chattrRealm = ChattrRealm()
+    @IBOutlet weak var aACCollectionView: UICollectionView!
     @IBOutlet weak var textToSpeechTxtFld: UITextField!
     @IBOutlet weak var readButtonItem: UIButton!
+    @IBOutlet weak var addButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
         textToSpeechTxtFld.delegate = self
         if !(textToSpeechTxtFld.text?.isEmpty)! {
             readButtonItem.isEnabled = false
@@ -89,6 +92,7 @@ extension AACEssentialsViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AACEssentialsCollectionViewCell
+        cell.delegate = self
         if let sortedACCEssentials = aCCEssentials?.sorted(byKeyPath: "name") {
             let aCCEssential = sortedACCEssentials[indexPath.item]
             cell.aCCNameLbl.text = aCCEssential.name
@@ -98,6 +102,9 @@ extension AACEssentialsViewController: UICollectionViewDelegate, UICollectionVie
                 cell.aCCImageView.image = #imageLiteral(resourceName: "NoImage")
             }
         }
+        cell.deleteBGViewItem.layer.cornerRadius = cell.deleteBGViewItem.bounds.width / 2
+        cell.deleteBGViewItem.layer.masksToBounds = true
+        cell.deleteBGViewItem.isHidden = !cell.isEditing
         return cell
     }
     
@@ -119,11 +126,51 @@ extension AACEssentialsViewController: UICollectionViewDelegate, UICollectionVie
             }
         }
     }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        addButtonItem.isEnabled = !editing
+        readButtonItem.isEnabled = !editing
+        if let indexPaths = aACCollectionView?.indexPathsForVisibleItems {
+            for indexPath in indexPaths {
+                let cell = aACCollectionView?.cellForItem(at: indexPath) as! AACEssentialsCollectionViewCell
+                cell.isEditing = editing
+            }
+        }
+    }
+}
+
+extension AACEssentialsViewController: AACEssentialsCellDelegate {
+    func deleteCell(_ cell: AACEssentialsCollectionViewCell) {
+        if let indexPath = self.aACCollectionView?.indexPath(for: cell) {
+            if let sortedActivities = aCCEssentials?.sorted(byKeyPath: "name") {
+                let item = sortedActivities[indexPath.item]
+                chattrRealm.deleteItems(item)
+                DispatchQueue.main.async {
+                    self.aACCollectionView?.reloadData()
+                }
+            }
+        }
+    }
 }
 
 class AACEssentialsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var deleteBGViewItem: UIVisualEffectView!
     @IBOutlet weak var aCCImageView: UIImageView!
     @IBOutlet weak var aCCNameLbl: UILabel!
+    var delegate : AACEssentialsCellDelegate?
+    var isEditing: Bool = false {
+        didSet{
+            deleteBGViewItem.isHidden = !isEditing
+        }
+    }
     
+    @IBAction func deleteButtonDidTap(_ sender: Any) {
+        delegate?.deleteCell(self)
+    }
+}
+
+protocol AACEssentialsCellDelegate {
+    func deleteCell(_ cell: AACEssentialsCollectionViewCell)
 }

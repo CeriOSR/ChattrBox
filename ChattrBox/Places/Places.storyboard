@@ -107,7 +107,16 @@
                             <outlet property="delegate" destination="8NU-mm-Pk4" id="APz-bN-z5S"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Places" image="Places" landscapeImage="Places" largeContentSizeImage="Places" id="Zaj-uA-Ptq"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="Places" landscapeImage="Places" largeContentSizeImage="Places" id="Zaj-uA-Ptq">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.090196078431372548" green="0.49803921568627452" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Places" id="uG1-Y2-Ix6">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="UgK-d1-s6u">
                             <connections>
