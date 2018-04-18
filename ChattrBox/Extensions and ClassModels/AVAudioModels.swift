@@ -10,6 +10,7 @@ import AVFoundation
 
 class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    let alertModels = AlertsModels()
     let url = GetFileUrl()
     var audioPlayer = AVAudioPlayer()
     var audioRecorder = AVAudioRecorder()
@@ -24,8 +25,8 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
             audioPlayer.volume = 1.0
-        } catch let err {
-            print(err)
+        } catch {
+            alertModels.createAlertWithOneAction("Audio Player Not Found", message: "Try restarting the app.")
             return
         }
     }
@@ -49,8 +50,8 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
             audioRecorder = try AVAudioRecorder(url: url, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.prepareToRecord()
-        } catch let err {
-            print(err)
+        } catch {
+            alertModels.createAlertWithOneAction("Audio Recorder Not Found", message: "Try restarting the app.")
         }
     }
 }

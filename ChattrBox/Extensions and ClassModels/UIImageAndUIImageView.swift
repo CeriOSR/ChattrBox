@@ -23,7 +23,14 @@ extension UIImageView {
             let imageData = try Data(contentsOf: fileURL)
             self.image = UIImage(data: imageData)
         } catch {
-            print("Error loading image : \(error)")
+            let alert = UIAlertController(title: "Image Not Found", message: "Try deleting the image and adding it again.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+
+            }
+            alert.addAction(action)
+            UIApplication.topViewController()?.present(alert, animated: true, completion: {
+                
+            })
         }
         
     }

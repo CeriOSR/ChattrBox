@@ -26,6 +26,7 @@ extension String {
 }
 
 class GetFileUrl {
+    let alertModels = AlertsModels()
     private func getCacheDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         guard let first = paths.first else {return "no path"}
@@ -35,8 +36,8 @@ class GetFileUrl {
     func makePermanentCopy(_ fileName: String) {
         do {
             try FileManager.default.copyItem(at: getFileUrl(), to: getPermanentFileUrl(fileName))
-        } catch let err {
-            print(err)
+        } catch {
+            alertModels.createAlertWithOneAction("Save Unsuccessful", message: "Make sure you have enough storage space.")
         }
     }
     

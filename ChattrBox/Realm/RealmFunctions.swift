@@ -13,6 +13,7 @@ import UIKit
 class ChattrRealm {
     let realm = try! Realm()
     var items : Results<Items>?
+    let alertModels = AlertsModels()
     
     func writingToRealmDB(_ item: Items) {
         try! realm.write {
@@ -36,8 +37,8 @@ class ChattrRealm {
             try self.realm.write {
                 realm.delete(item)
             }
-        } catch let err {
-            print("Please handle this error", err) //create an alert controller here
+        } catch {
+            alertModels.createAlertWithOneAction("Delete Unsuccessful", message: "Please try to deleting again.")
             return
         }
     }

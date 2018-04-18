@@ -129,8 +129,8 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         let imageData = UIImageJPEGRepresentation(image, 0.3)
         do {
             try imageData?.write(to: fileUrl!)
-        } catch let err {
-            print("Could not write to disk", err)
+        } catch {
+            alertsModels.createAlertWithOneAction("Save Unsuccessful", message: "Please make sure you have space to save this image.")
         }
     }
     
@@ -182,7 +182,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             soundRecorder?.delegate = self
             soundRecorder?.prepareToRecord()
         } catch let err {
-            print(err)
+            alertsModels.createAlertWithOneAction("Sound Recorder Not Found", message: "Please restart the app.")
         }
         
     }
@@ -197,7 +197,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         do {
             try FileManager.default.copyItem(at: getFileUrl(), to: getPermanentFileUrl())
         } catch let err {
-            print(err)
+            alertsModels.createAlertWithOneAction("Save Sound Unsuccessful", message: "Please make sure there is enough space in your phone.")
         }
     }
     
@@ -228,7 +228,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
         } catch let err {
-            print(err)
+            alertsModels.createAlertWithOneAction("Sound Player Not Found", message: "Try restarting the app.")
         }
     }
     
