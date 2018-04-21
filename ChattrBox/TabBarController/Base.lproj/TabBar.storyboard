@@ -12,7 +12,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Sd9-8Q-ZkJ">
             <objects>
-                <tabBarController storyboardIdentifier="UITabBarController-Tre-bt-drl" id="Tre-bt-drl" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController-Tre-bt-drl" id="Tre-bt-drl" customClass="TabBarController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kTn-CS-PKx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

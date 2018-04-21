@@ -181,7 +181,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             soundRecorder = try AVAudioRecorder(url: getFileUrl(), settings: settings)
             soundRecorder?.delegate = self
             soundRecorder?.prepareToRecord()
-        } catch let err {
+        } catch {
             alertsModels.createAlertWithOneAction("Sound Recorder Not Found", message: "Please restart the app.")
         }
         
@@ -196,7 +196,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     private func makePermanentCopy() {
         do {
             try FileManager.default.copyItem(at: getFileUrl(), to: getPermanentFileUrl())
-        } catch let err {
+        } catch {
             alertsModels.createAlertWithOneAction("Save Sound Unsuccessful", message: "Please make sure there is enough space in your phone.")
         }
     }
@@ -227,7 +227,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             soundPlayer?.delegate = self
             soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
-        } catch let err {
+        } catch {
             alertsModels.createAlertWithOneAction("Sound Player Not Found", message: "Try restarting the app.")
         }
     }
@@ -263,12 +263,24 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         performSegue(withIdentifier: "addItemToTabBarController", sender: self)
     }
     
-    /*
+    
      // MARK: - Navigation
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+     
+        let referenceForTabBarController = segue.destination as! UITabBarController
+        switch fromId {
+        case "Essentials" :
+            referenceForTabBarController.selectedIndex = 0
+        case "Activities" :
+            referenceForTabBarController.selectedIndex = 1
+        case "Places" :
+            referenceForTabBarController.selectedIndex = 2
+        case "People" :
+            referenceForTabBarController.selectedIndex = 3
+        default:
+            referenceForTabBarController.selectedIndex = 0
+        }
      }
-     */
+    
 }
