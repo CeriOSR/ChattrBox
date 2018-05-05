@@ -16,6 +16,9 @@
 		E019E852207ED8B0006EFB7D /* ACCEssential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019E851207ED8B0006EFB7D /* ACCEssential.storyboard */; };
 		E019E853207ED8B0006EFB7D /* ACCEssential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019E851207ED8B0006EFB7D /* ACCEssential.storyboard */; };
 		E019E854207ED8B0006EFB7D /* ACCEssential.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E019E851207ED8B0006EFB7D /* ACCEssential.storyboard */; };
+		E0334D22209CE24400DB5C56 /* Glitzstick.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0334D21209CE24400DB5C56 /* Glitzstick.ttf */; };
+		E0334D23209CE24400DB5C56 /* Glitzstick.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0334D21209CE24400DB5C56 /* Glitzstick.ttf */; };
+		E0334D24209CE24400DB5C56 /* Glitzstick.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0334D21209CE24400DB5C56 /* Glitzstick.ttf */; };
 		E05D7888206F45CF000EC831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7887206F45CF000EC831 /* AppDelegate.swift */; };
 		E05D788A206F45CF000EC831 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D7889206F45CF000EC831 /* TabBarController.swift */; };
 		E05D788D206F45CF000EC831 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05D788B206F45CF000EC831 /* TabBar.storyboard */; };
@@ -129,6 +132,7 @@
 		B0B46D26F768DAAE5BA7B4CE /* Pods_ChattrBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChattrBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019E848207BAE8C006EFB7D /* AlertsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsModels.swift; sourceTree = "<group>"; };
 		E019E851207ED8B0006EFB7D /* ACCEssential.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ACCEssential.storyboard; sourceTree = "<group>"; };
+		E0334D21209CE24400DB5C56 /* Glitzstick.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glitzstick.ttf; sourceTree = "<group>"; };
 		E05D7884206F45CF000EC831 /* ChattrBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattrBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D7887206F45CF000EC831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05D7889206F45CF000EC831 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				E05D78C7206F4743000EC831 /* AddItem */,
 				E05D78D0206F47F8000EC831 /* Object Model */,
 				E05D7887206F45CF000EC831 /* AppDelegate.swift */,
+				E0334D21209CE24400DB5C56 /* Glitzstick.ttf */,
 				E05D788E206F45CF000EC831 /* Assets.xcassets */,
 				E05D7890206F45CF000EC831 /* LaunchScreen.storyboard */,
 				E05D7893206F45D0000EC831 /* Info.plist */,
@@ -501,6 +506,7 @@
 				E05D78DC206F480F000EC831 /* People.storyboard in Resources */,
 				E05D788F206F45CF000EC831 /* Assets.xcassets in Resources */,
 				E0DA995D2076DEC0005A0AD8 /* Main.storyboard in Resources */,
+				E0334D22209CE24400DB5C56 /* Glitzstick.ttf in Resources */,
 				E05D788D206F45CF000EC831 /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +519,7 @@
 				E019E853207ED8B0006EFB7D /* ACCEssential.storyboard in Resources */,
 				E05D78DD206F480F000EC831 /* People.storyboard in Resources */,
 				E0DA995E2076DEC0005A0AD8 /* Main.storyboard in Resources */,
+				E0334D23209CE24400DB5C56 /* Glitzstick.ttf in Resources */,
 				E05D78C5206F4703000EC831 /* Activities.storyboard in Resources */,
 				E05D78CB206F4743000EC831 /* AddItem.storyboard in Resources */,
 			);
@@ -526,6 +533,7 @@
 				E019E854207ED8B0006EFB7D /* ACCEssential.storyboard in Resources */,
 				E05D78DE206F480F000EC831 /* People.storyboard in Resources */,
 				E0DA995F2076DEC0005A0AD8 /* Main.storyboard in Resources */,
+				E0334D24209CE24400DB5C56 /* Glitzstick.ttf in Resources */,
 				E05D78C6206F4703000EC831 /* Activities.storyboard in Resources */,
 				E05D78CC206F4743000EC831 /* AddItem.storyboard in Resources */,
 			);
