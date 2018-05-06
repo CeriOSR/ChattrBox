@@ -25,7 +25,7 @@ extension AACEssentialsViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let textString = textToSpeechTxtFld.text {
-            audioModels.playTextToSpeed(textString)
+            audioModels.playTextToSpeech(textString)
             textField.resignFirstResponder()
         }
         return true
@@ -103,7 +103,7 @@ extension AACEssentialsViewController: AACEssentialsCellDelegate {
         if let indexPath = self.aACCollectionView?.indexPath(for: cell) {
             if let sortedActivities = aCCEssentials?.sorted(byKeyPath: "name") {
                 let item = sortedActivities[indexPath.item]
-                chattrRealm.deleteItems(item)
+                chattrRealm.deleteItems(item, controllerId: controllerId)
                 DispatchQueue.main.async {
                     self.aACCollectionView?.reloadData()
                 }

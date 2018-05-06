@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Item View Controller-->
+        <!--Add Item-->
         <scene sceneID="Ba7-lh-YyH">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="lfo-8b-EC3" customClass="AddItemViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Item" hidesBottomBarWhenPushed="YES" id="lfo-8b-EC3" customClass="AddItemViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed8-b6-vya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +133,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NoImage" width="876" height="758"/>
+        <image name="NoImage" width="792" height="612"/>
     </resources>
 </document>

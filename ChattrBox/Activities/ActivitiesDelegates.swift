@@ -48,7 +48,7 @@ extension ActivitiesCollectionViewController {
         if let sortedActivities = activities?.sorted(byKeyPath: "name") {
             let activity = sortedActivities[indexPath.item]
             guard let name = activity.name else {return}
-                audioModels.playTextToSpeed(name)
+                audioModels.playTextToSpeech(name)
 //            if let audioFileName = activity.audioFileName {
 //                audioModels.setupPlayer(fileName: audioFileName)
 //                audioModels.audioPlayer.play()
@@ -73,7 +73,7 @@ extension ActivitiesCollectionViewController: ActivityCellDelegate {
         if let indexPath = collectionView?.indexPath(for: cell) {
             if let sortedActivities = activities?.sorted(byKeyPath: "name") {
                 let item = sortedActivities[indexPath.item]
-                chattrRealm.deleteItems(item)
+                chattrRealm.deleteItems(item, controllerId: controllerId)
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
                 }

@@ -49,7 +49,7 @@ extension PlacesCollectionViewController {
         if let sortedPlaces = places?.sorted(byKeyPath: "name") {
             let place = sortedPlaces[indexPath.item]
             guard let name = place.name else {return}
-            audioModels.playTextToSpeed(name)
+            audioModels.playTextToSpeech(name)
 //            if let audioFileName = place.audioFileName {
 //                audioModels.setupPlayer(fileName: audioFileName)
 //                audioModels.audioPlayer.play()
@@ -74,7 +74,7 @@ extension PlacesCollectionViewController: PlacesCellDelegate {
         if let indexPath = collectionView?.indexPath(for: cell) {
             if let sortedPlaces = places?.sorted(byKeyPath: "name") {
                 let item = sortedPlaces[indexPath.item]
-                chattrRealm.deleteItems(item)
+                chattrRealm.deleteItems(item, controllerId: controllerId)
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
                 }

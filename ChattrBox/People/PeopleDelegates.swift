@@ -61,10 +61,10 @@ extension PeopleCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let sortedPeople = people?.sorted(byKeyPath: "name") {
             let person = sortedPeople[indexPath.item]
-//            guard let name = person.name else {return}
+            guard let name = person.name else {return}
 //            audioModels.playTextToSpeed(name)
             if let audioFileName = person.audioFileName {
-                audioModels.setupPlayer(fileName: audioFileName)
+                audioModels.setupPlayer(fileName: audioFileName, name: name)
                 audioModels.audioPlayer.play()
             }
         }
@@ -87,7 +87,7 @@ extension PeopleCollectionViewController: PeopleCellDelegate {
         if let indexPath = collectionView?.indexPath(for: cell) {
             if let sortedPeople = people?.sorted(byKeyPath: "name") {
                 let item = sortedPeople[indexPath.item]
-                chattrRealm.deleteItems(item)
+                chattrRealm.deleteItems(item, controllerId: controllerId)
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
                 }

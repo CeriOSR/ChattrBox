@@ -48,7 +48,7 @@ class AACEssentialsViewController: UIViewController {
     @IBAction func readButtonDidTap(_ sender: UIButton) {
         
         guard let textString = textToSpeechTxtFld.text else {return}
-        audioModels.playTextToSpeed(textString)
+        audioModels.playTextToSpeech(textString)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

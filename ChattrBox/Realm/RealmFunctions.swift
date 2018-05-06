@@ -27,11 +27,12 @@ class ChattrRealm {
         return filteredItems
     }
     
-    func deleteItems(_ item: Items) {
+    func deleteItems(_ item: Items, controllerId: String) {
         var documentsUrl: URL {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         }
-        let imageFilePath = documentsUrl.appendingPathComponent(item.imageFileName!)
+        guard let image = item.imageFileName else {return}
+        let imageFilePath = documentsUrl.appendingPathComponent(image)
         do {
             try FileManager.default.removeItem(at: imageFilePath)
             try self.realm.write {
@@ -40,6 +41,22 @@ class ChattrRealm {
         } catch {
             alertModels.createAlertWithOneAction("Delete Unsuccessful", message: "Please try to deleting again.")
             return
+        }
+        if controllerId == "People" {
+            var documentsUrl: URL {
+                return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            }
+            guard let audio = item.audioFileName else {return}
+            let audioFilePath = documentsUrl.appendingPathComponent(audio)
+            do {
+                try FileManager.default.removeItem(at: audioFilePath)
+                try self.realm.write {
+                    realm.delete(item)
+                }
+            } catch {
+                alertModels.createAlertWithOneAction("Delete Unsuccessful", message: "Please try to deleting again.")
+                return
+            }
         }
     }
 }

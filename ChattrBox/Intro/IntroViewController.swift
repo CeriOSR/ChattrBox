@@ -12,7 +12,6 @@ class IntroViewController: UIViewController {
     
     var timer : Timer?
     var isRunning: Bool = false
-    
     let logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "chattrBox")
@@ -20,10 +19,6 @@ class IntroViewController: UIViewController {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
-    
-    
-    
-    
     let devNameLabel: UILabel = {
         let label = UILabel()
         guard let customFont = UIFont(name: "Glitzstick", size: 40) else {
@@ -51,7 +46,6 @@ class IntroViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(segueToTabBar), userInfo: nil, repeats: false)
             isRunning = true
         }
-
     }
     
     func setupViews() {

@@ -18,7 +18,7 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
-    func setupPlayer(fileName: String) {
+    func setupPlayer(fileName: String, name: String) {
         let fileUrl = documentsUrl.appendingPathComponent(fileName)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: fileUrl)
@@ -26,12 +26,14 @@ class AudioModels: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
             audioPlayer.prepareToPlay()
             audioPlayer.volume = 1.0
         } catch {
-            alertModels.createAlertWithOneAction("Audio Player Not Found", message: "Try restarting the app.")
-            return
+//            guard let name = activity.name else {return}
+            playTextToSpeech(name)
+//            alertModels.createAlertWithOneAction("Audio Player Not Found", message: "Try restarting the app.")
+//            return
         }
     }
     
-    func playTextToSpeed(_ text: String) {
+    func playTextToSpeech(_ text: String) {
         let textString = text
         let utterance = AVSpeechUtterance(string: textString)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")

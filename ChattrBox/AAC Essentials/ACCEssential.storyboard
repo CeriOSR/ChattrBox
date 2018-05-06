@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Essentials View Controller-->
+        <!--Essentials-->
         <scene sceneID="zzN-hM-N7H">
             <objects>
-                <viewController id="kR6-K8-8dk" customClass="AACEssentialsViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Essentials" id="kR6-K8-8dk" customClass="AACEssentialsViewController" customModule="ChattrBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fs0-NA-qDe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gUS-Ck-Ivp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MgZ-ud-wUr">
+                    <navigationItem key="navigationItem" title="Essentials" id="MgZ-ud-wUr">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="nGg-OP-3Sa">
                             <connections>
                                 <segue destination="Y9f-H9-N6a" kind="show" identifier="essentialsToAddItem" id="yhy-xa-E8d"/>

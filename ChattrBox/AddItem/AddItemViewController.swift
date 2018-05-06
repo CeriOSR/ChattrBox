@@ -28,6 +28,7 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         super.viewDidLoad()
         newItemNameTextField.delegate = self
         newItemTypeLabel.text = fromId
+        navigationItem.title = "Add Item"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveItem))
         newItemImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapImage)))
     }
